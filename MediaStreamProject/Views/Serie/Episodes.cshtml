@@ -4,6 +4,6 @@
 <ul>
     @foreach (MediaStreamProject.Models.Episode episode in ViewBag.Episodes)
     {
-        <li>Episode @episode.Number</li>
+    <li><a href="~/Serie/VideoEpisodes/@episode.Id">Episode @episode.Number</a></li>
     }
 </ul>

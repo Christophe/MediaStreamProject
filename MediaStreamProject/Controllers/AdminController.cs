@@ -16,7 +16,7 @@ namespace MediaStreamProject.Controllers
         [Authorize]
         public ActionResult Index()
         {
-            ViewBag.list_series = model.Series.ToList(); //hollaaaa
+            ViewBag.list_series = model.Series.ToList();
             ViewBag.list_films = model.Films.ToList();
             return View();
         }
