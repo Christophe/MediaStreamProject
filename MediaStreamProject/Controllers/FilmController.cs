@@ -27,7 +27,7 @@ namespace MediaStreamProject.Controllers
         {
             var f = model.Films;
             Film film = f.Find(id);
-            ViewBag.Episode = film;
+            ViewBag.Film = film;
             return View("VideoFilms");
         }
     }
