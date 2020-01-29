@@ -3,7 +3,7 @@
 @* Formulaire d'ajout d'un nouveau film *@
     <div class="Film">
         <h3>Ajouter un film sur le site MediaChill</h3>
-        @using (Html.BeginForm())
+        @using (Html.BeginForm("AddMovie", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
         {
             <p>
                 @Html.Label("Titre du film")
@@ -28,6 +28,13 @@
                             new { @class = "form-control" })
             </p>
             <p>
+                @Html.Label("Synopsis")
+                <br />
+                @Html.TextArea("Synopsis", null, new { @class = "form-control" })
+                <br />
+                @Html.ValidationMessage("Synopsis")
+            </p>
+            <p>
                 @Html.Label("Durée du film (en min)")
                 <br />
                 @Html.TextBox("Duration")
@@ -39,16 +46,16 @@
                 <br />
                 <input type="file" name="fileImage" />
                 <br />
-                @Html.ValidationMessage("MoviePicture")
+                @Html.ValidationMessage("Image")
             </p>
             <p>
                 @Html.Label("Video du film")
                 <br />
                 <input type="file" name="fileVideo" />
                 <br />
-                @Html.ValidationMessage("MoviePicture")
+                @Html.ValidationMessage("Video")
             </p>
-            <button type="submit" name="AddMovie" value="AddMovie" class="AddButton">Ajouter un film</button>
+            <input type="submit" value="Ajouter" />
         }
     </div>
 @Html.ActionLink("Retour a l'index", "index")

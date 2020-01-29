@@ -38,7 +38,7 @@ namespace MediaStreamProject.Controllers
                 try
                 {
                     // File Image
-                    string pathImage = Path.Combine(Server.MapPath("/Photos/"),
+                    string pathImage = Path.Combine(Server.MapPath("/Images/"),
                                                     Path.GetFileName(fileImage.FileName));
                     fileImage.SaveAs(pathImage);
                     film.Image = "/Images/" + fileImage.FileName;
@@ -81,7 +81,7 @@ namespace MediaStreamProject.Controllers
                 try
                 {
                     // File Image
-                    string pathImage = Path.Combine(Server.MapPath("/Photos/"),
+                    string pathImage = Path.Combine(Server.MapPath("/Images/"),
                                                     Path.GetFileName(fileImage.FileName));
                     fileImage.SaveAs(pathImage);
                     serie.Image = "/Images/" + fileImage.FileName;
