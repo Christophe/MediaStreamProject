@@ -1,0 +1,9 @@
+﻿@{ViewBag.Title = "Seasons";}
+
+<h2>Saisons</h2>
+<ul>
+    @foreach (MediaStreamProject.Models.Season season in ViewBag.Seasons)
+    {
+        <li><a href="~/Serie/Episodes/@season.Id">Saison @season.Number</a></li> 
+    }
+</ul>

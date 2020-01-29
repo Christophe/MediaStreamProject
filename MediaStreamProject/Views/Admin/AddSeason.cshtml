@@ -1,0 +1,58 @@
+﻿@{ViewBag.Title = "AddSeason";}
+
+@*Tableau pour afficher la liste des saisons*@
+<h3>Liste des saisons</h3>
+<table>
+    <tr>
+        <th>Serie ID</th>
+        <th>Titre</th>
+        <th>Saisons </th>
+    </tr>
+    @foreach (MediaStreamProject.Models.Serie serie in ViewBag.list_series)
+    {
+        <tr>
+            <td>@serie.Id</td>
+            <td>@serie.Title</td>
+            <td>
+                @foreach (MediaStreamProject.Models.Season season in ViewBag.list_seasons)
+                {
+                    if (serie.Id == season.SerieID)
+                    {
+                        @season.Number<br />
+                    }
+                }
+            </td>
+        </tr>
+    }
+</table>
+@*Formulaire d'ajout d'une saison à notre série*@
+<div class="Season">
+    <h3>Ajout d'une nouvelle saison</h3>
+    @using (Html.BeginForm("AddSeason", "Admin")) //Ajouter du controler Item
+    {
+        <p>
+            @Html.Label("ID de la serie ?")
+            <br />
+            @Html.Editor("SerieID")
+            <br />
+            @Html.ValidationMessage("SerieID")
+        </p>
+        <p>
+            @Html.Label("Numero de la saison ?")
+            <br />
+            @Html.Editor("Number")
+            <br />
+            @Html.ValidationMessage("Number")
+        </p>
+        <p>
+            @Html.Label("Synopsis")
+            <br />
+            @Html.TextArea("Synopsis", null, new { @class = "form-control" })
+            <br />
+            @Html.ValidationMessage("Synopsis")
+        </p>
+        <input type="submit" value="Ajouter" />
+    }
+</div>
+@Html.ActionLink("Retour à l'index", "Index")
+

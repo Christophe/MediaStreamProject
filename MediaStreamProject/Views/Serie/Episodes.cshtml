@@ -1,0 +1,9 @@
+﻿@{ ViewBag.Title = "Episodes";}
+
+<h2>Episodes</h2>
+<ul>
+    @foreach (MediaStreamProject.Models.Episode episode in ViewBag.Episodes)
+    {
+        <li>Episode @episode.Number</li>
+    }
+</ul>

@@ -1,0 +1,40 @@
+﻿@model MediaStreamProject.Models.Serie
+
+@* Formulaire d'ajout d'une nouvelle serie *@
+<div class="Serie">
+    <h3>Ajout d'une nouvelle serie</h3>
+    @using (Html.BeginForm("AddSerie", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <p>
+            @Html.Label("Titre")
+            <br />
+            @Html.Editor("Title")
+            <br />
+            @Html.ValidationMessage("Title")
+        </p>
+        <p>
+            @Html.Label("Genre")
+            <br />
+            @Html.EnumDropDownListFor(
+                        serie => serie.Genre,
+                        "Selectionner le genre de la serie",
+                        new { @class = "form-control" })
+        </p>
+        <p>
+            @Html.Label("Synopsis")
+            <br />
+            @Html.TextArea("Synopsis", null, new { @class = "form-control" })
+            <br />
+            @Html.ValidationMessage("Synopsis")
+        </p>
+        <p>
+            @Html.Label("Image de la serie")
+            <br />
+            <input type="file" name="fileImage" />
+            <br />
+            @Html.ValidationMessage("Image")
+        </p>
+        <input type="submit" value="Ajouter" />
+        @Html.ActionLink("Retour à l'index", "index")
+    }
+</div>

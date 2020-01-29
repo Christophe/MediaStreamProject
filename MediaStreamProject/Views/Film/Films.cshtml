@@ -1,0 +1,89 @@
+﻿@model MediaStreamProject.Models.Model1
+<h2>Films</h2>
+@*Affiche les Films par genre*@
+<div class="Genre">
+    <p>
+        <h3>Action</h3>
+        @foreach (MediaStreamProject.Models.Film film in ViewBag.Film)
+        {
+            if (film.Genre == MediaStreamProject.Models.Genre.Action)
+            {
+                <img src="../@film.Image" />
+                <br />
+                @film.Title
+            }
+        }
+    </p>
+    <p>
+        <h3>Animation</h3>
+        @foreach (MediaStreamProject.Models.Film film in ViewBag.Film)
+        {
+            if (film.Genre == MediaStreamProject.Models.Genre.Animation)
+            {
+                <img src="../@film.Image" />
+                <br />
+                @film.Title
+            }
+        }
+    </p>
+    <p>
+        <h3>Horreur</h3>
+        @foreach (MediaStreamProject.Models.Film film in ViewBag.Film)
+        {
+            if (film.Genre == MediaStreamProject.Models.Genre.Horreur)
+            {
+                <img src="../@film.Image" />
+                <br />
+                @film.Title
+            }
+        }
+    </p>
+    <p>
+        <h3>Humour</h3>
+        @foreach (MediaStreamProject.Models.Film film in ViewBag.Film)
+        {
+            if (film.Genre == MediaStreamProject.Models.Genre.Humour)
+            {
+                <img src="../@film.Image" />
+                <br />
+                @film.Title
+            }
+        }
+    </p>
+    <p>
+        <h3>Romantique</h3>
+        @foreach (MediaStreamProject.Models.Film film in ViewBag.Film)
+        {
+            if (film.Genre == MediaStreamProject.Models.Genre.Romantique)
+            {
+                <img src="../@film.Image" />
+                <br />
+                @film.Title
+            }
+        }
+    </p>
+    <p>
+        <h3>Science Fiction</h3>
+        @foreach (MediaStreamProject.Models.Film film in ViewBag.Film)
+        {
+            if (film.Genre == MediaStreamProject.Models.Genre.Science_Fiction)
+            {
+                <img src="../@film.Image" />
+                <br />
+                @film.Title
+            }
+        }
+    </p>
+    <p>
+        <h3>Thriller</h3>
+        @foreach (MediaStreamProject.Models.Film film in ViewBag.Film)
+        {
+            if (film.Genre == MediaStreamProject.Models.Genre.Thriller)
+            {
+                <img src="../@film.Image" />
+                <br />
+                @film.Title
+            }
+        }
+    </p>
+</div>

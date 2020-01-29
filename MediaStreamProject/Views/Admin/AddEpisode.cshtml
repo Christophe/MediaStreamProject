@@ -1,0 +1,63 @@
+﻿@{ViewBag.Title = "AddEpisode";}
+
+@*Tableau pour afficher la liste des episodes*@
+<h3>Listes des épisodes</h3>
+<ul>
+    @foreach (MediaStreamProject.Models.Serie serie in ViewBag.list_series)
+    {
+        <li>@serie.Title</li>
+        <ul>
+            @foreach (MediaStreamProject.Models.Season season in ViewBag.list_seasons)
+            {
+                if (serie.Id == season.SerieID)
+                {
+                    <li>ID : @season.Id Saison @season.Number</li>
+                    <ul>
+                        @foreach (MediaStreamProject.Models.Episode episode in ViewBag.list_episodes)
+                        {
+                            if (season.Id == episode.SeasonID)
+                            {
+                                <li>Episode @episode.Number</li>
+                            }
+                        }
+                    </ul>
+                }
+            }
+        </ul>
+    }
+</ul>
+@*Formulaire d'ajout d'un episode*@
+<h2>Ajout d'un nouvel episode</h2>
+@using (Html.BeginForm("AddEpisode", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <p>
+        @Html.Label("ID de la saison ?")
+        <br />
+        @Html.Editor("SeasonID")
+        <br />
+        @Html.ValidationMessage("SeasonID")
+    </p>
+    <p>
+        @Html.Label("Numero de l'épisode ?")
+        <br />
+        @Html.Editor("Number")
+        <br />
+        @Html.ValidationMessage("Number")
+    </p>
+    <p>
+        @Html.Label("Durée de l'épisode (en min)")
+        <br />
+        @Html.Editor("Duration")
+        <br />
+        @Html.ValidationMessage("Duration")
+    </p>
+    <p>
+        @Html.Label("Video de l'épisode")
+        <br />
+        <input type="file" name="fileVideo" />
+        <br />
+        @Html.ValidationMessage("Video")
+    </p>
+    <input type="submit" value="Ajouter" />
+}
+@Html.ActionLink("Retour à l'index", "Index")

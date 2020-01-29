@@ -1,0 +1,26 @@
+﻿@model MediaStreamProject.Models.User
+@{ViewBag.Title = "Inscription";}
+
+@* Formulaire d'inscription *@
+<div class="Inscription">
+    <h3>S'inscrire à MediaStream</h3>
+    @using (Html.BeginForm())
+    {
+        <p>
+            @Html.Label("Login")
+            <br />
+            @Html.TextBox("Login")
+            <br />
+            @Html.ValidationMessage("Login")
+        </p>
+        <p>
+            @Html.Label("Password")
+            <br />
+            @Html.Password("Password")
+            <br />
+            @Html.ValidationMessage("Password")
+        </p>
+        <button type="submit" name="Inscription" value="Inscription" class="InscriptionButton">Inscription</button>
+    }
+</div>
+

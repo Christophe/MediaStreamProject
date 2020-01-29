@@ -1,0 +1,55 @@
+﻿@model MediaStreamProject.Models.Film
+
+@* Formulaire d'ajout d'un nouveau film *@
+    <div class="Film">
+        <h3>Ajouter un film sur le site MediaChill</h3>
+        @using (Html.BeginForm())
+        {
+            <p>
+                @Html.Label("Titre du film")
+                <br />
+                @Html.TextBox("Title")
+                <br />
+                @Html.ValidationMessage("Title")
+            </p>
+            <p>
+                @Html.Label("Nom du Réalisateur")
+                <br />
+                @Html.TextBox("RealName")
+                <br />
+                @Html.ValidationMessage("RealName")
+            </p>
+            <p>
+                @Html.Label("Genre")
+                <br />
+                @Html.EnumDropDownListFor(
+                            film => film.Genre,
+                            "Selectionner le genre du film",
+                            new { @class = "form-control" })
+            </p>
+            <p>
+                @Html.Label("Durée du film (en min)")
+                <br />
+                @Html.TextBox("Duration")
+                <br />
+                @Html.ValidationMessage("Duration")
+            </p>
+            <p>
+                @Html.Label("Affiche du film")
+                <br />
+                <input type="file" name="fileImage" />
+                <br />
+                @Html.ValidationMessage("MoviePicture")
+            </p>
+            <p>
+                @Html.Label("Video du film")
+                <br />
+                <input type="file" name="fileVideo" />
+                <br />
+                @Html.ValidationMessage("MoviePicture")
+            </p>
+            <button type="submit" name="AddMovie" value="AddMovie" class="AddButton">Ajouter un film</button>
+        }
+    </div>
+@Html.ActionLink("Retour a l'index", "index")
+

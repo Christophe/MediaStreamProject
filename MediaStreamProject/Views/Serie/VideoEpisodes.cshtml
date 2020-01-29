@@ -1,0 +1,10 @@
+﻿@{ MediaStreamProject.Models.Episode episode = ViewBag.Episode;}
+
+@{ViewBag.Title = "VideoEpisode";}
+
+<h2>Episode @episode.Number</h2>
+<video controls>
+
+    <source src=@episode.Video />
+
+</video>

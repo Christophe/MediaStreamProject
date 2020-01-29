@@ -1,0 +1,8 @@
+﻿@{ MediaStreamProject.Models.Film film = ViewBag.Film;}
+
+@{ViewBag.Title = "VideoFilms";}
+
+<h2>Film @film.Title</h2>
+<video controls>
+    <source src=@film.Video />
+</video>

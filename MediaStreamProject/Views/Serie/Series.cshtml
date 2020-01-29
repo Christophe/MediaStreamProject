@@ -1,0 +1,89 @@
+﻿@model MediaStreamProject.Models.Model1
+<h2>Séries</h2>
+@*Affiche les Series par genre*@
+<div class="Genre">
+    <p>
+        <h3>Action</h3>
+        @foreach (MediaStreamProject.Models.Serie serie in ViewBag.Serie)
+        {
+            if (serie.Genre == MediaStreamProject.Models.Genre.Action)
+            {
+                <img src="../@serie.Image" />
+                <br />
+                @serie.Title
+            }
+        }
+    </p>
+    <p>
+        <h3>Animation</h3>
+        @foreach (MediaStreamProject.Models.Serie serie in ViewBag.Serie)
+        {
+            if (serie.Genre == MediaStreamProject.Models.Genre.Animation)
+            {
+                <img src="../@serie.Image" />
+                <br />
+                @serie.Title
+            }
+        }
+    </p>
+    <p>
+        <h3>Horreur</h3>
+        @foreach (MediaStreamProject.Models.Serie serie in ViewBag.Serie)
+        {
+            if (serie.Genre == MediaStreamProject.Models.Genre.Horreur)
+            {
+                <img src="../@serie.Image" />
+                <br />
+                @serie.Title
+            }
+        }
+    </p>
+    <p>
+        <h3>Humour</h3>
+        @foreach (MediaStreamProject.Models.Serie serie in ViewBag.Serie)
+        {
+            if (serie.Genre == MediaStreamProject.Models.Genre.Humour)
+            {
+                <img src="../@serie.Image" />
+                <br />
+                @serie.Title
+            }
+        }
+    </p>
+    <p>
+        <h3>Romantique</h3>
+        @foreach (MediaStreamProject.Models.Serie serie in ViewBag.Serie)
+        {
+            if (serie.Genre == MediaStreamProject.Models.Genre.Romantique)
+            {
+                <img src="../@serie.Image" />
+                <br />
+                @serie.Title
+            }
+        }
+    </p>
+    <p>
+        <h3>Science Fiction</h3>
+        @foreach (MediaStreamProject.Models.Serie serie in ViewBag.Serie)
+        {
+            if (serie.Genre == MediaStreamProject.Models.Genre.Science_Fiction)
+            {
+                <img src="../@serie.Image" />
+                <br />
+                @serie.Title
+            }
+        }
+    </p>
+    <p>
+        <h3>Thriller</h3>
+        @foreach (MediaStreamProject.Models.Serie serie in ViewBag.Serie)
+        {
+            if (serie.Genre == MediaStreamProject.Models.Genre.Thriller)
+            {
+                <img src="../@serie.Image" />
+                <br />
+                @serie.Title
+            }
+        }
+    </p>
+</div>

@@ -1,0 +1,38 @@
+﻿@{ViewBag.Title = "Index";}
+
+<h1>Admin</h1>
+<h2>Liste des series</h2>
+<table>
+    <tr>
+        <th>Titre</th>
+    </tr>
+    @foreach (MediaStreamProject.Models.Serie serie in ViewBag.list_series)
+    {
+        <tr>
+            <td>@serie.Title</td>
+        </tr>
+    }
+</table>
+<br/>
+
+<h2>Liste des films</h2>
+<table>
+    <tr>
+        <th>Titre</th>
+    </tr>
+    @foreach (MediaStreamProject.Models.Film film in ViewBag.list_films)
+    {
+        <tr>
+            <td>@film.Title</td>
+        </tr>
+    }
+</table>
+<br/>
+
+@Html.ActionLink("Ajouter une nouvelle Série", "AddSerie")
+<br />
+@Html.ActionLink("Ajouter une nouvelle saison", "AddSeason")
+<br />
+@Html.ActionLink("Ajouter un nouvel épisode", "AddEpisode")
+<br />
+@Html.ActionLink("Ajouter un nouveau film", "AddMovie")
