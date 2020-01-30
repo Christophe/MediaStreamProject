@@ -15,9 +15,9 @@
             <div class=" navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
 
-                    <a class="navitem" href="#">Accueil</a>
-                    <a class="navitem" href="#">Film</a>
-                    <a class="navitem" href="#">Série</a>
+                    @Html.ActionLink("Accueil", "Index", "Home", null, new { @class = "navitem" })
+                    @Html.ActionLink("Films", "Films", "Film", null, new { @class = "navitem" })
+                    @Html.ActionLink("Séries", "Series", "Serie", null, new { @class = "navitem" })
 
                 </div>
             </div>
