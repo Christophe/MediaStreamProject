@@ -189,6 +189,7 @@
     <Content Include="Views\Film\Films.cshtml" />
     <Content Include="Views\Serie\VideoEpisodes.cshtml" />
     <Content Include="Views\Film\VideoFilms.cshtml" />
+    <Content Include="Views\Home\Research.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

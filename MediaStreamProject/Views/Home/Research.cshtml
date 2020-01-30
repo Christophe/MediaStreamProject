@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "Research";
+}
+
+@{ string src = "";}
+<h2>Series</h2>
+@foreach (MediaStreamProject.Models.Serie serie in ViewBag.ResearchSerie)
+{
+    src = serie.Image;
+    <a href="~/Serie/Seasons/@serie.Id">
+        <img src=@src height="300" width="200" />
+    </a>
+    <br />
+    @serie.Title
+}
+<br />
+
+<h2>Films</h2>
+@foreach (MediaStreamProject.Models.Film film in ViewBag.ResearchFilm)
+{
+
+    <a href="~/Film/VideoFilms/@film.Id"><img src="../@film.Image" /></a>
+    <br />
+    @film.Title
+
+}

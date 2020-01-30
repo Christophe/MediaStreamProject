@@ -18,7 +18,12 @@
                     @Html.ActionLink("Accueil", "Index", "Home", null, new { @class = "navitem" })
                     @Html.ActionLink("Films", "Films", "Film", null, new { @class = "navitem" })
                     @Html.ActionLink("Séries", "Series", "Serie", null, new { @class = "navitem" })
-
+                    @using (Html.BeginForm("Research", "Home"))
+                    {
+                        @Html.Label("Research : ")
+                        @Html.TextBox("research")
+                        <input type="submit" value="Filter" />
+                    }
                 </div>
             </div>
         </nav>
