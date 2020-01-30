@@ -9,7 +9,21 @@
     <script src="~/Scripts/modernizr-2.8.3.js"></script>
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <header>
+        <nav class="navbar ">
+
+            <div class=" navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+
+                    <a class="navitem" href="#">Accueil</a>
+                    <a class="navitem" href="#">Film</a>
+                    <a class="navitem" href="#">Série</a>
+
+                </div>
+            </div>
+        </nav>
+    </header>
+    @*<div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -24,7 +38,7 @@
                 </ul>
             </div>
         </div>
-    </div>
+    </div>*@
 
     <div class="container body-content">
         @RenderBody()

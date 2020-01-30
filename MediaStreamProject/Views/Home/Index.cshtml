@@ -1,11 +1,15 @@
 ﻿@{ViewBag.Title = "Index";}
+    <div id="HomePage">
 
-@* Action Link pour s'identifier qui utilise l'action Connexion du controller Login  *@
-@Html.ActionLink("S'identifier", "Connexion", "Login", null, new { @class = "Identification" })
+        @* Action Link pour s'identifier qui utilise l'action Connexion du controller Login  *@
+        @Html.ActionLink("S'identifier", "Connexion", "Login", null, new { @class = "ConnexionButton" })
 
-<h3>Bienvenue sur MediaChill</h3>
-<p>Connectez-vous ou inscrivez-vous pour acc&eacute;der au contenu</p>
+        <div class="Center">
+            <h3>Bienvenue sur MediaChill</h3>
+            <p>Connectez-vous ou inscrivez-vous pour acc&eacute;der au contenu</p>
 
-@* Action Link pour s'inscrire qui utilise l'action Inscription du controller Login  *@
-@Html.ActionLink("S'inscrire", "Inscription", "Login")
+            @* Action Link pour s'inscrire qui utilise l'action Inscription du controller Login  *@
+            @Html.ActionLink("S'inscrire", "Inscription", "Login", new { @class = "InscriptionButton" })
 
+        </div>
+    </div>

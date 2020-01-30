@@ -1,7 +1,7 @@
 ﻿/* BODY */
 body {
     font-size: 12px;
-    padding-top: 50px;
+    //padding-top: 50px;
     padding-bottom: 20px;
 }
 
@@ -17,56 +17,90 @@ select,
 textarea {
     max-width: 280px;
 }
+#HomePage {
+    /*background-image: url('../images/inception-movie.jpg');*/
+}
 
-.Identification {
-    background-color: #e50914;
+.ConnexionButton, .InscriptionButton, .ConnexionButtonForm {
+    background-color: #D9001B;
     color: white;
-    line-height: normal;
-    padding: 7px 17px;
-    font-weight: 400;
-    font-weight: bold;
+    text-align: center;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 24px;
+    height: 50px;
+    width: 200px;
+}
+.ConnexionButton {
     float: right;
-    border-radius: 3px;
-    margin-top: 0.5rem;
+    
+    
 }
 
-.Identification:hover{
-        text-decoration: none !important;
-    }
-
-.Inscription {
-    background-color: #fff;
-    border: 1px solid #dddfe2;
-    border-radius: 3px;
-    margin: auto;
-    padding: 22px 108px 26px;
-    width: 396px;
-    text-align: center;
+.ConnexionButton:hover, .InscriptionButton:hover {
+    text-decoration: none !important;
+    color: black;
+}
+.navbar {
+    background-color: rgba(0, 0, 0, 0.6);
+    position: fixed;
+    padding-left: 10%;
 }
 
-.InscriptionButton {
-    cursor: pointer;
+.navbar.fixed {
+    transition-duration: .5s,.1s;
+    transition-delay: 0;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+
+.navitem {
+    float: left;
     display: inline-block;
-    text-decoration: none;
-    white-space: nowrap;
-    padding: 0 24px;
-    background-color: #e50914;
-    border-color: #e50914;
-    color: #fff;
-    transition: 200ms cubic-bezier(.08,.52,.52,1) background-color, 200ms cubic-bezier(.08,.52,.52,1) box-shadow, 200ms cubic-bezier(.08,.52,.52,1) transform;
-    border: 1px solid;
-    border-radius: 2px;
-    box-sizing: content-box;
-    width: 132px;
-    line-height: 42px;
-    font-size: 12px;
-    -moz-osx-font-smoothing: grayscale;
-    font-weight: bold;
-    justify-content: center;
-    padding: 0 8px;
-    position: relative;
-    text-align: center;
-    text-shadow: none;
-    vertical-align: middle;
+    font-size: 20px;
+    color: white;
+    line-height: inherit;
+    letter-spacing: 0;
+    padding: 28px 17px;
 }
 
+.navitem:hover {
+    color: #D9001B;
+    text-decoration: none;
+}
+
+.Center{
+    padding:50px;
+}
+footer {
+    bottom: 0;
+    position: fixed;
+}
+
+.InscriptionContent, .ConnexionContent {
+    background-color: rgba(0, 0, 0, 0.6);
+    width:450px;
+    height:auto;
+    padding: 10px;
+}
+
+.Center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+    .Center > p, .Center > h3 {
+        font-size: 4rem;
+        text-align: center;
+        margin: 60px;
+    }
+#buttonCenter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.InscriptionContent > h3, .ConnexionContent >h3{
+    
+}
