@@ -1,26 +1,30 @@
 ﻿@model MediaStreamProject.Models.User
 @{ViewBag.Title = "Connexion";}
 
-<div class="Connexion">
+<div class="ConnexionContent">
     <h3>Connexion</h3>
     @using (Html.BeginForm())
     {
-        <p>
-            @Html.Label("Login")
-            <br />
-            @Html.TextBox("Login")
-            <br />
-            @Html.ValidationMessage("Login")
-        </p>
-        <p>
-            @Html.Label("Password")
-            <br />
-            @Html.Password("Password")
-            <br />
-            @Html.ValidationMessage("Password")
-        </p>
-        <input type="submit" value="Connexion" />
+
+    <div class="formCase">
+        @Html.Label("Login")
         <br />
+        @Html.TextBox("Login")
+        <br />
+        @Html.ValidationMessage("Login")
+    </div>
+    <div class="formCase">
+        @Html.Label("Password")
+        <br />
+        @Html.Password("Password")
+        <br />
+        @Html.ValidationMessage("Password")
+    </div>
+    <div id="buttonCenter">
+        <input type="submit" value="Connexion" class="ConnexionButtonForm" />
+    </div>
+    <br />
+
     }
 </div>
 
