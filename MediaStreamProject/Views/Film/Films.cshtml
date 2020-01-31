@@ -1,89 +1,132 @@
 ﻿@model MediaStreamProject.Models.Model1
-<h2>Films</h2>
-@*Affiche les Films par genre*@
-<div class="Genre">
-    <p>
+<div class="FilmGenre">
+    <h1>Films</h1>
+    @*Affiche les Films par genre*@
+
+    <div class="GenreContainer">
         <h3>Action</h3>
-        @foreach (MediaStreamProject.Models.Film film in ViewBag.Film)
-        {
-            if (film.Genre == MediaStreamProject.Models.Genre.Action)
+        <div class="GenreVignette">
+            @foreach (MediaStreamProject.Models.Film film in ViewBag.Film)
             {
-                <a href="~/Film/VideoFilms/@film.Id"><img src="../@film.Image" /></a>
-                <br />
-                @film.Title
+                if (film.Genre == MediaStreamProject.Models.Genre.Action)
+                {
+            <div class="Film">
+                <a href="~/Film/VideoFilms/@film.Id"><img src="../@film.Image" class="GenreVignetteImage" /></a>
+
+                <div class="GenreVignetteTitre"> @film.Title </div>
+                <div class="row">
+                    <div class="col-sm-8">
+                        @* Action Link pour ajouter le film à la wishlist  *@
+                        @Html.ActionLink("A regerder plus tard", "AddToWishListFilm", "WishList", null, new { @class = "WishListButton" })
+                    </div>
+                    <div class="col-sm-4">
+                        @* Action Link pour ajouter le film à l'historique des films  *@
+                        @Html.ActionLink("Historique", "AddToHistoriqueFilm", "Historique", null, new { @class = "HistoriqueButton" })
+                    </div>
+                </div>
+            </div>
+                }
             }
-        }
-    </p>
-    <p>
+
+        </div>
+    </div>
+
+    <div class="GenreContainer">
         <h3>Animation</h3>
-        @foreach (MediaStreamProject.Models.Film film in ViewBag.Film)
-        {
-            if (film.Genre == MediaStreamProject.Models.Genre.Animation)
+        <div class="GenreVignette">
+            @foreach (MediaStreamProject.Models.Film film in ViewBag.Film)
             {
-    <a href="~/Film/VideoFilms/@film.Id"><img src="../@film.Image" /></a>
-                <br />
-                @film.Title
+                if (film.Genre == MediaStreamProject.Models.Genre.Animation)
+                {
+                    <div class="Film">
+                        <a href="~/Film/VideoFilms/@film.Id"><img src="../@film.Image" class="GenreVignetteImage" /></a>
+
+                        <div class="GenreVignetteTitre"> @film.Title </div>
+                    </div>
+                }
             }
-        }
-    </p>
-    <p>
+
+        </div>
+    </div>
+
+    <div class="GenreContainer">
         <h3>Horreur</h3>
-        @foreach (MediaStreamProject.Models.Film film in ViewBag.Film)
-        {
-            if (film.Genre == MediaStreamProject.Models.Genre.Horreur)
+        <div class="GenreVignette">
+            @foreach (MediaStreamProject.Models.Film film in ViewBag.Film)
             {
-    <a href="~/Film/VideoFilms/@film.Id"><img src="../@film.Image" /></a>
-                <br />
-                @film.Title
+                if (film.Genre == MediaStreamProject.Models.Genre.Horreur)
+                {
+                    <div class="Film">
+                        <a href="~/Film/VideoFilms/@film.Id"><img src="../@film.Image" class="GenreVignetteImage" /></a>
+
+                        <div class="GenreVignetteTitre"> @film.Title </div>
+                    </div>
+                }
             }
-        }
-    </p>
-    <p>
+        </div>
+    </div>
+    <div class="GenreContainer">
         <h3>Humour</h3>
-        @foreach (MediaStreamProject.Models.Film film in ViewBag.Film)
-        {
-            if (film.Genre == MediaStreamProject.Models.Genre.Humour)
+        <div class="GenreVignette">
+            @foreach (MediaStreamProject.Models.Film film in ViewBag.Film)
             {
-    <a href="~/Film/VideoFilms/@film.Id"><img src="../@film.Image" /></a>
-                <br />
-                @film.Title
+                if (film.Genre == MediaStreamProject.Models.Genre.Humour)
+                {
+                    <div class="Film">
+                        <a href="~/Film/VideoFilms/@film.Id"><img src="../@film.Image" class="GenreVignetteImage" /></a>
+
+                        <div class="GenreVignetteTitre"> @film.Title </div>
+                    </div>
+                }
             }
-        }
-    </p>
-    <p>
+        </div>
+    </div>
+    <div class="GenreContainer">
         <h3>Romantique</h3>
-        @foreach (MediaStreamProject.Models.Film film in ViewBag.Film)
-        {
-            if (film.Genre == MediaStreamProject.Models.Genre.Romantique)
+        <div class="GenreVignette">
+            @foreach (MediaStreamProject.Models.Film film in ViewBag.Film)
             {
-    <a href="~/Film/VideoFilms/@film.Id"><img src="../@film.Image" /></a>
-                <br />
-                @film.Title
+                if (film.Genre == MediaStreamProject.Models.Genre.Romantique)
+                {
+                    <div class="Film">
+                        <a href="~/Film/VideoFilms/@film.Id"><img src="../@film.Image" class="GenreVignetteImage" /></a>
+
+                        <div class="GenreVignetteTitre"> @film.Title </div>
+                    </div>
+                }
             }
-        }
-    </p>
-    <p>
+        </div>
+    </div>
+    <div class="GenreContainer">
         <h3>Science Fiction</h3>
-        @foreach (MediaStreamProject.Models.Film film in ViewBag.Film)
-        {
-            if (film.Genre == MediaStreamProject.Models.Genre.Science_Fiction)
+        <div class="GenreVignette">
+            @foreach (MediaStreamProject.Models.Film film in ViewBag.Film)
             {
-    <a href="~/Film/VideoFilms/@film.Id"><img src="../@film.Image" /></a>
-                <br />
-                @film.Title
+                if (film.Genre == MediaStreamProject.Models.Genre.Science_Fiction)
+                {
+                    <div class="Film">
+                        <a href="~/Film/VideoFilms/@film.Id"><img src="../@film.Image" class="GenreVignetteImage" /></a>
+
+                        <div class="GenreVignetteTitre"> @film.Title </div>
+                    </div>
+                }
             }
-        }
-    </p>
-    <p>
+        </div>
+    </div>
+    <div class="GenreContainer">
         <h3>Thriller</h3>
-        @foreach (MediaStreamProject.Models.Film film in ViewBag.Film)
-        {
-            if (film.Genre == MediaStreamProject.Models.Genre.Thriller)
+        <div class="GenreVignette">
+            @foreach (MediaStreamProject.Models.Film film in ViewBag.Film)
             {
-    <a href="~/Film/VideoFilms/@film.Id"><img src="../@film.Image" /></a>
-                <br />
-                @film.Title
+                if (film.Genre == MediaStreamProject.Models.Genre.Thriller)
+                {
+                    <div class="Film">
+                        <a href="~/Film/VideoFilms/@film.Id"><img src="../@film.Image" class="GenreVignetteImage" /></a>
+
+                        <div class="GenreVignetteTitre"> @film.Title </div>
+                    </div>
+                }
             }
-        }
-    </p>
+        </div>
+    </div>
 </div>

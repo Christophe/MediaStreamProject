@@ -1,8 +1,16 @@
 ﻿@{ViewBag.Title = "Contenu";}
-<h1>Contenu</h1>
-@* Action Link pour s'inscrire qui utilise l'action Inscription du controller Login  *@
-@Html.ActionLink("Series", "Series", "Serie")
-<br />
-@* Action Link pour s'inscrire qui utilise l'action Inscription du controller Login  *@
-@Html.ActionLink("Films", "Films", "Film")
-
+        <h1>Contenu</h1>
+    <div class="Contenu">
+        <div class="FlexSeries">
+            <h3>Séries</h3>
+            @* Action Link pour s'inscrire qui utilise l'action Inscription du controller Login  *@
+            @Html.ActionLink("Series", "Series", "Serie", null, new { @class = "AfficheFlexSeries" })
+            
+            <br />
+        </div>
+        <div class="FlexFilms">
+            <h3>Films</h3>
+            @* Action Link pour s'inscrire qui utilise l'action Inscription du controller Login  *@
+            @Html.ActionLink("Films", "Films", "Film", null, new { @class = "AfficheFlexFilms" })
+        </div>
+    </div>
