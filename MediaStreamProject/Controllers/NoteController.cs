@@ -30,12 +30,19 @@ namespace MediaStreamProject.Controllers
             // Si note est vide alors User peut noter
             if (note == null)
             {
+                // Modification de la BDD
+                using (var model = new Model1())
+                {
                 // On incrémente le compteur NoteCompteur de 1
                 film.NoteCompteur = film.NoteCompteur + 1;
                 // On additionne la nouvelle note avec la NoteTotal
                 film.NoteTotal = film.NoteTotal + note.Notes;
                 // La note du film est NoteTotal/NoteCompteur
                 film.Note = (film.NoteTotal % film.NoteCompteur);
+
+                    model.SaveChanges();
+                }
+
             }
 
             // Sinon on renvoie un message disant qu'il a déjà vote
@@ -43,19 +50,6 @@ namespace MediaStreamProject.Controllers
             {
                 string alert = "Vous avez déjà noté ce film!";
             }
-
-            return View();
-        }
-
-        // GET : Methode pour noter une serie
-        public ActionResult NoterSerie()
-        {
-            return View();
-        }
-        // POST : Methode pour noter une serie
-        [HttpPost]
-        public ActionResult NoterSerie(Note note, Serie serie)
-        {
 
             return View();
         }

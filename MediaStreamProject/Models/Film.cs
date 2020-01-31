@@ -28,7 +28,6 @@ namespace MediaStreamProject.Models
         public string Image { get; set; }
         public string Video { get; set; }
 
-        // Gestion des Notes
         public int Note { get; set; }
         public int NoteCompteur { get; set; }
         public int NoteTotal { get; set; }
