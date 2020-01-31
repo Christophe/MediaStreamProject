@@ -102,6 +102,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="Content\Note.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Images\affiche-film.jpg" />
@@ -130,6 +131,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\NoteController.cs" />
+    <Compile Include="Controllers\QuizzController.cs" />
     <Compile Include="Controllers\SerieController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -138,10 +140,15 @@
     <Compile Include="Migrations\202001311342377_css.designer.cs">
       <DependentUpon>202001311342377_css.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202001311358342_testmigcsskhad.cs" />
+    <Compile Include="Migrations\202001311358342_testmigcsskhad.designer.cs">
+      <DependentUpon>202001311358342_testmigcsskhad.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Note.cs" />
     <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\Episode.cs" />
+    <Compile Include="Models\QuizzResult.cs" />
     <Compile Include="Models\Season.cs" />
     <Compile Include="Models\Serie.cs" />
     <Compile Include="Models\Film.cs" />
@@ -178,6 +185,10 @@
     <Content Include="Views\Serie\VideoEpisodes.cshtml" />
     <Content Include="Views\Film\VideoFilms.cshtml" />
     <Content Include="Views\Home\Research.cshtml" />
+    <Content Include="Views\Note\NoterFilm.cshtml" />
+    <Content Include="Views\Quizz\Index.cshtml" />
+    <Content Include="Views\Quizz\QuizzSerie.cshtml" />
+    <Content Include="Views\Quizz\Results.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -187,11 +198,13 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Note\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202001311342377_css.resx">
       <DependentUpon>202001311342377_css.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001311358342_testmigcsskhad.resx">
+      <DependentUpon>202001311358342_testmigcsskhad.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

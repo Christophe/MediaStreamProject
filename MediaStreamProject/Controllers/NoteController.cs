@@ -9,22 +9,25 @@ namespace MediaStreamProject.Controllers
 {
     public class NoteController : Controller
     {
-        public ActionResult Noter()
+        // GET : Methode pour noter un film
+        public ActionResult NoterFilm()
         {
             return View();
         }
+        // POST : Methode pour noter un film
         [HttpPost]
         public ActionResult NoterFilm(Note note, Film film)
         {
-            // Recuperation de la note du film a noter et de l'id du film
+            // Recuperation du User courant via la Session["userId"]
+            // Recuperation des Notes de ce Film et comparaison de UserId et Session["userId"]
             using (var model = new Model1())
             {
-               Note notes = (from nt in model.Notes
-                             where nt.FilmId.Equals(film.Id) && nt.UserId.Equals(Session["userId"])
-                            // User courant est recupere via la Session["userId"]
-                             select nt).FirstOrDefault();
+                note = (from nt in model.Notes
+                        where nt.FilmId.Equals(film.Id) && nt.UserId.Equals(Session["userId"])
+                        select nt).FirstOrDefault();
             }
-            // Si la note est vide alors il peut noter
+
+            // Si note est vide alors User peut noter
             if (note == null)
             {
                 // On incrémente le compteur NoteCompteur de 1
@@ -34,14 +37,27 @@ namespace MediaStreamProject.Controllers
                 // La note du film est NoteTotal/NoteCompteur
                 film.Note = (film.NoteTotal % film.NoteCompteur);
             }
+
             // Sinon on renvoie un message disant qu'il a déjà vote
             else
             {
-                // Vous avez deja note ce film
-                string alert = "ake";
+                string alert = "Vous avez déjà noté ce film!";
             }
 
-            return View("/Home/Index");
+            return View();
+        }
+
+        // GET : Methode pour noter une serie
+        public ActionResult NoterSerie()
+        {
+            return View();
+        }
+        // POST : Methode pour noter une serie
+        [HttpPost]
+        public ActionResult NoterSerie(Note note, Serie serie)
+        {
+
+            return View();
         }
     }
 }

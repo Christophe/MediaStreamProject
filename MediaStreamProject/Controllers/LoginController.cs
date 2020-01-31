@@ -65,7 +65,7 @@ namespace MediaStreamProject.Controllers
                             ViewData["Authentifie"] = true;
 
                             // On stock l'Id de l'User en Session
-                            Session["userId"] = user.Id;
+                            Session["userId"] = user1.Id;
 
                             return Redirect("/Home/Contenu");
                         }
