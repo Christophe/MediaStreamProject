@@ -129,6 +129,7 @@
     <Compile Include="Controllers\FilmController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\NoteController.cs" />
     <Compile Include="Controllers\SerieController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -154,6 +155,7 @@
       <DependentUpon>202001281536460_migtestfs.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Note.cs" />
     <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\Episode.cs" />
     <Compile Include="Models\Season.cs" />
@@ -201,6 +203,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Note\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202001270943120_Test.resx">
