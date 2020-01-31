@@ -34,6 +34,7 @@ textarea {
 .ConnexionButton {
     float: right;
     
+    
 }
 
 .ConnexionButton:hover, .InscriptionButton:hover {
@@ -41,7 +42,7 @@ textarea {
     color: black;
 }
 .navbar {
-   background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.6);
     position: fixed;
     padding-left: 10%;
 }
@@ -89,96 +90,35 @@ footer {
     flex-direction: column;
     align-items: center;
 }
-.Center > p, .Center > h3 {
-    font-size: 4rem;
-    text-align: center;
-    margin: 60px;
-}
+    .Center > p, .Center > h3 {
+        font-size: 4rem;
+        text-align: center;
+        margin: 60px;
+    }
 #buttonCenter {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.Contenu {
+
+.ContainerFlexColumn {
     display: flex;
-    
+    flex-direction: column;
+}
+
+.ContainerFlexWrap {
+    display: flex;
     flex-wrap: wrap;
-    background-color: rgba(0, 0, 0, 0.6);
     justify-content: space-around;
 }
-.FlexSeries, .FlexFilms {
-    display: flex;
-    flex-direction: column;
-    
-    border-radius: 5px;
-    padding: 10px;
-    margin: 30px;
-    font-size: 24px;
-    background-color: #D9001B;
+.SerieAffiche {
+    width: 500px;
+    height:800px;
+    background-image: url('../images/affiche-serie.jpg');
 }
-.AfficheFlexFilms {
-    background-image: url('../images/affiches-flex-film.jpg');
-    width: 400px;
+.FilmAffiche {
+    width: 500px;
     height: 800px;
-    margin: 30px;
+    background-image: url('../images/affiche-film.jpg');
 }
-.AfficheFlexSeries {
-    background-image: url('../images/affiche-flex-series.png');
-    width: 400px;
-    height: 800px;
-    margin: 30px;
-   
-}
-.FilmGenre, .SerieGenre {
-    color: white;
-    padding: 30px;
-    background-color: #1f2020;
-    display: flex;
-    flex-direction: column;
-}
-.GenreContainer {
-    display: flex;
-    flex-direction: column;
-    padding:5px;
-}
-.GenreVignette {
-    display: flex;
-    overflow-x: auto;
-    /*flex-wrap: wrap;*/
-    align-items: center;
-    justify-content: flex-start;
-    margin: 20px;
-    background-size: cover;
-}
-.Film, .Serie {
-    display: flex;
-    flex-direction: column;
-    padding: 30px;
-}
-.GenreVignetteImage {
-    width: 300px;
-    background-size: cover;
-}
-.GenreVignetteTitre {
-    text-align: center;
-}
-.row {
-    display: flex;
-    flex-wrap: wrap;
-    
-}
-.WishListButton, .HistoriqueButton {
-    background-color: #D9001B;
-    color: white;
-    text-align: center;
-    border-radius: 3px;
-    font-size: 14px;
-    height: 15px;
-    
-}
-    .WishListButton:hover, .HistoriqueButton:hover {
-        color: black;
-        text-decoration: none;
-        
-    }

@@ -54,14 +54,14 @@ namespace MediaStreamProject.Controllers
                     // Sauvegarde les changement dans le model
                     model.Films.Add(film);
                     model.SaveChanges();
-                    return Redirect("Index");
+                    return Redirect("Admin/Index");
                 }
                 catch (Exception e)
                 {
                     ViewBag.Message = "Erreur" + e.Message.ToString();
                 }
             }
-            return View("AddMovie");
+            return View(film);
         }
         // *********************** //
         // METHODE POUR LES SERIES //

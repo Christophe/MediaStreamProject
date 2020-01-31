@@ -1,16 +1,11 @@
 ﻿@{ViewBag.Title = "Contenu";}
+    <div class="ContainerFlexColumn">
         <h1>Contenu</h1>
-    <div class="Contenu">
-        <div class="FlexSeries">
-            <h3>Séries</h3>
+        <div class="ContainerFlexWrap">
             @* Action Link pour s'inscrire qui utilise l'action Inscription du controller Login  *@
-            @Html.ActionLink("Series", "Series", "Serie", null, new { @class = "AfficheFlexSeries" })
-            
+            @Html.ActionLink("Series", "Series", "Serie", null, new { @class = "SerieAffiche" })
             <br />
-        </div>
-        <div class="FlexFilms">
-            <h3>Films</h3>
             @* Action Link pour s'inscrire qui utilise l'action Inscription du controller Login  *@
-            @Html.ActionLink("Films", "Films", "Film", null, new { @class = "AfficheFlexFilms" })
+            @Html.ActionLink("Films", "Films", "Film", null, new { @class = "FilmAffiche" })
         </div>
     </div>

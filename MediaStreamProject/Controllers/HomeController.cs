@@ -23,5 +23,22 @@ namespace MediaStreamProject.Controllers
             ViewBag.list_films = model.Films.ToList();
             return View();
         }
+        [Authorize]
+        [HttpPost]
+        public ActionResult Research(string research)
+        {
+            var series = model.Series;
+            var films = model.Films;
+            var Query_series = from serie in series
+                        where serie.Title.Contains(research)
+                        select serie;
+            ViewBag.ResearchSeries = Query_series.ToList<Serie>();
+
+            var Query_films = from film in films
+                              where film.Title.Contains(research) || film.RealName.Contains(research)
+                              select film;
+            ViewBag.ResearchFilms = Query_films.ToList<Film>();
+            return View();
+        }
     }
 }

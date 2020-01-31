@@ -1,124 +1,103 @@
 ﻿@model MediaStreamProject.Models.Model1
-<div class="SerieGenre">
-    <h1>Séries</h1>
-
-    @*Affiche les Series par genre*@
-
-<div class="GenreContainer">
-    <h3>Action</h3>
-    <div class="GenreVignette">
+<h2>Séries</h2>
+@*Affiche les Series par genre*@
+<div class="Genre">
+    <p>
+        <h3>Action</h3>
         @foreach (MediaStreamProject.Models.Serie serie in ViewBag.Serie)
         {
             if (serie.Genre == MediaStreamProject.Models.Genre.Action)
             {
-                <div class="Serie">
-                    <a href="~/Serie/Seasons/@serie.Id"><img src="../@serie.Image" class="GenreVignetteImage" /></a>
-                    <div class="GenreVignetteTitre"> @serie.Title </div>
-                </div>
+                <a href="~/Serie/Seasons/@serie.Id">
+                    <img src="../@serie.Image" height="125" width="100" />
+                </a>
+                <br />
+                //@serie.Title
             }
         }
-    </div>
-    </div>
-
-<div class="GenreContainer">
-    <h3>Animation</h3>
-    <div class="GenreVignette">
+    </p>
+    <p>
+        <h3>Animation</h3>
         @foreach (MediaStreamProject.Models.Serie serie in ViewBag.Serie)
         {
             if (serie.Genre == MediaStreamProject.Models.Genre.Animation)
             {
-                <div class="Serie">
-                    <a href="~/Serie/Seasons/@serie.Id"><img src="../@serie.Image" class="GenreVignetteImage" /></a>
-                    <div class="GenreVignetteTitre"> @serie.Title </div>
-                </div>
+                <a href="~/Serie/Seasons/@serie.Id">
+                    <img src="../@serie.Image" height="125" width="100" />
+                </a>
+                <br />
+                //@serie.Title
             }
         }
-    </div>
-    </div>
-
-<div class="GenreContainer">
-    <h3>Horreur</h3>
-    <div class="GenreVignette">
+    </p>
+    <p>
+        <h3>Horreur</h3>
         @foreach (MediaStreamProject.Models.Serie serie in ViewBag.Serie)
         {
             if (serie.Genre == MediaStreamProject.Models.Genre.Horreur)
             {
-                <div class="Serie">
-                    <a href="~/Serie/Seasons/@serie.Id">
-                        <img src="../@serie.Image" class="GenreVignetteImage" />
-                    </a>
-                    <div class="GenreVignetteTitre"> @serie.Title </div>
-                </div>
+                <a href="~/Serie/Seasons/@serie.Id">
+                    <img src="../@serie.Image" height="125" width="100" />
+                </a>
+                <br />
+                //@serie.Title
             }
         }
-    </div>
-    </div>
-<div class="GenreContainer">
-    <h3>Humour</h3>
-    <div class="GenreVignette">
+    </p>
+    <p>
+        <h3>Humour</h3>
         @foreach (MediaStreamProject.Models.Serie serie in ViewBag.Serie)
         {
             if (serie.Genre == MediaStreamProject.Models.Genre.Humour)
             {
-                <div class="Serie">
-                    <a href="~/Serie/Seasons/@serie.Id">
-                        <img src="../@serie.Image" class="GenreVignetteImage" />
-                    </a>
-                    <div class="GenreVignetteTitre"> @serie.Title </div>
-                </div>
+                <a href="~/Serie/Seasons/@serie.Id">
+                    <img src="../@serie.Image" height="125" width="100" />
+                </a>
+                <br />
+                //@serie.Title
             }
         }
-    </div>
-    </div>
-<div class="GenreContainer">
-    <h3>Romantique</h3>
-    <div class="GenreVignette">
+    </p>
+    <p>
+        <h3>Romantique</h3>
         @foreach (MediaStreamProject.Models.Serie serie in ViewBag.Serie)
         {
             if (serie.Genre == MediaStreamProject.Models.Genre.Romantique)
             {
-                <div class="Serie">
-                    <a href="~/Serie/Seasons/@serie.Id">
-                        <img src="../@serie.Image" class="GenreVignetteImage" />
-                    </a>
-                    <div class="GenreVignetteTitre"> @serie.Title </div>
-                </div>
+                <a href="~/Serie/Seasons/@serie.Id">
+                    <img src="../@serie.Image" height="125" width="100" />
+                </a>
+                <br />
+                //@serie.Title
             }
         }
-    </div>
-    </div>
-<div class="GenreContainer">
-    <h3>Science Fiction</h3>
-    <div class="GenreVignette">
+    </p>
+    <p>
+        <h3>Science Fiction</h3>
         @foreach (MediaStreamProject.Models.Serie serie in ViewBag.Serie)
+        {
+            if (serie.Genre == MediaStreamProject.Models.Genre.Science_Fiction)
             {
-                if (serie.Genre == MediaStreamProject.Models.Genre.Science_Fiction)
-                {
-                    <div class="Serie">
-                        <a href="~/Serie/Seasons/@serie.Id">
-                            <img src="../@serie.Image" class="GenreVignetteImage" />
-                        </a>
-                        <div class="GenreVignetteTitre"> @serie.Title </div>
-                    </div>
-                }
+                <a href="~/Serie/Seasons/@serie.Id">
+                    <img src="../@serie.Image" height="125" width="100" />
+                </a>
+                <br />
+                //@serie.Title
             }
-        </div>
-    </div>
-<div class="GenreContainer">
-    <h3>Thriller</h3>
-    <div class="GenreVignette">
+        }
+    </p>
+    <p>
+        <h3>Thriller</h3>
         @foreach (MediaStreamProject.Models.Serie serie in ViewBag.Serie)
         {
             if (serie.Genre == MediaStreamProject.Models.Genre.Thriller)
             {
-                <div class="Serie">
-                    <a href="~/Serie/Seasons/@serie.Id">
-                        <img src="../@serie.Image" class="GenreVignetteImage" />
-                    </a>
-                    <div class="GenreVignetteTitre"> @serie.Title </div>
-                </div>
+                <a href="~/Serie/Seasons/@serie.Id">
+                    <img src="../@serie.Image" height="125" width="100" />
+                </a>
+                <br />
+                //@serie.Title
             }
         }
-    </div>
-    </div>
+    </p>
 </div>

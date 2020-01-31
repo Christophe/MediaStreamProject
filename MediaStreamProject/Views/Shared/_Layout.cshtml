@@ -10,35 +10,43 @@
 </head>
 <body>
     <header>
-        <nav class="navbar ">
 
-            <div class=" navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
 
-                    <a class="navitem" href="#">Accueil</a>
-                    <a class="navitem" href="#">Film</a>
-                    <a class="navitem" href="#">Série</a>
-
+        <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
                 </div>
             </div>
-        </nav>
-    </header>
-    @*<div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Accueil", "Index", "Home", null, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Films", "Films", "Film", null, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Séries", "Series", "Serie", null, new { @class = "nav-link" })</li>
                 </ul>
+                
+                @using (Html.BeginForm("Research", "Home"))
+                {
+                    @Html.Label("Research : ")
+                    @Html.TextBox("research")
+                    <input type="submit" value="Filter" />
+
+                }
+                
             </div>
-        </div>
-    </div>*@
+        </nav>
+
+
+    </header>
+        @*============================================================================================*@
+
 
     <div class="container body-content">
         @RenderBody()
