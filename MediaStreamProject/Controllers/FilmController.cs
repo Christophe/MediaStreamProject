@@ -12,7 +12,7 @@ namespace MediaStreamProject.Controllers
         // Appel du model en static
         static Model1 model = new Model1();
 
-        // GET: Film
+        // GET : Film
         public ActionResult Films()
         {
             var films = model.Films;

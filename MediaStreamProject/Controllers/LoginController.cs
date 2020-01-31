@@ -63,6 +63,10 @@ namespace MediaStreamProject.Controllers
                         {
                             FormsAuthentication.SetAuthCookie(user1.Login.ToString(), false);
                             ViewData["Authentifie"] = true;
+
+                            // On stock l'Id de l'User en Session
+                            Session["userId"] = user.Id;
+
                             return Redirect("/Home/Contenu");
                         }
                     }
@@ -90,6 +94,10 @@ namespace MediaStreamProject.Controllers
                     model.SaveChanges();
                 }
                 FormsAuthentication.SetAuthCookie(user.Login.ToString(), true);
+
+                // On stock l'Id de l'User en Session
+                Session["userId"] = user.Id;
+
                 return Redirect("/Home/Contenu");
             }
             return View(user);

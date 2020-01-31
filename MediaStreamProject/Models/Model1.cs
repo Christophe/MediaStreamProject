@@ -15,5 +15,6 @@
         public virtual DbSet<Serie> Series { get; set; }
         public virtual DbSet<Season> Seasons { get; set; }
         public virtual DbSet<Episode> Episodes { get; set; }
+        public virtual DbSet<Note> Notes { get; set; }
     }
 }
