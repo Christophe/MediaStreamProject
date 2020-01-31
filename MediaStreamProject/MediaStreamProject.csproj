@@ -102,6 +102,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="Content\Note.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Images\affiche-film.jpg" />
@@ -154,6 +155,10 @@
     <Compile Include="Migrations\202001281536460_migtestfs.designer.cs">
       <DependentUpon>202001281536460_migtestfs.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202001311358342_testmigcsskhad.cs" />
+    <Compile Include="Migrations\202001311358342_testmigcsskhad.designer.cs">
+      <DependentUpon>202001311358342_testmigcsskhad.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Note.cs" />
     <Compile Include="Models\Genre.cs" />
@@ -194,6 +199,7 @@
     <Content Include="Views\Serie\VideoEpisodes.cshtml" />
     <Content Include="Views\Film\VideoFilms.cshtml" />
     <Content Include="Views\Home\Research.cshtml" />
+    <Content Include="Views\Note\NoterFilm.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -203,7 +209,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Note\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202001270943120_Test.resx">
@@ -220,6 +225,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202001281536460_migtestfs.resx">
       <DependentUpon>202001281536460_migtestfs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001311358342_testmigcsskhad.resx">
+      <DependentUpon>202001311358342_testmigcsskhad.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
