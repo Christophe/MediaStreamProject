@@ -134,25 +134,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202001270943120_Test.cs" />
-    <Compile Include="Migrations\202001270943120_Test.designer.cs">
-      <DependentUpon>202001270943120_Test.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202001271521478_mig.cs" />
-    <Compile Include="Migrations\202001271521478_mig.designer.cs">
-      <DependentUpon>202001271521478_mig.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202001281006504_mig2.cs" />
-    <Compile Include="Migrations\202001281006504_mig2.designer.cs">
-      <DependentUpon>202001281006504_mig2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202001281317267_migSF.cs" />
-    <Compile Include="Migrations\202001281317267_migSF.designer.cs">
-      <DependentUpon>202001281317267_migSF.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202001281536460_migtestfs.cs" />
-    <Compile Include="Migrations\202001281536460_migtestfs.designer.cs">
-      <DependentUpon>202001281536460_migtestfs.cs</DependentUpon>
+    <Compile Include="Migrations\202001311342377_css.cs" />
+    <Compile Include="Migrations\202001311342377_css.designer.cs">
+      <DependentUpon>202001311342377_css.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Note.cs" />
@@ -206,20 +190,8 @@
     <Folder Include="Views\Note\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202001270943120_Test.resx">
-      <DependentUpon>202001270943120_Test.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202001271521478_mig.resx">
-      <DependentUpon>202001271521478_mig.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202001281006504_mig2.resx">
-      <DependentUpon>202001281006504_mig2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202001281317267_migSF.resx">
-      <DependentUpon>202001281317267_migSF.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202001281536460_migtestfs.resx">
-      <DependentUpon>202001281536460_migtestfs.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202001311342377_css.resx">
+      <DependentUpon>202001311342377_css.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -21,15 +21,15 @@ textarea {
     /*background-image: url('../images/inception-movie.jpg');*/
 }
 
-.ConnexionButton, .InscriptionButton, .ConnexionButtonForm {
+.ButtonForm, .ConnexionButtonForm {
     background-color: #D9001B;
     color: white;
     text-align: center;
     border-radius: 5px;
     padding: 10px;
+    margin:20px;
     font-size: 24px;
-    height: 50px;
-    width: 200px;
+    
 }
 .ConnexionButton {
     float: right;
@@ -83,6 +83,7 @@ footer {
     width:450px;
     height:auto;
     padding: 10px;
+    margin:70px;
 }
 
 .Center {
@@ -122,3 +123,28 @@ footer {
     height: 800px;
     background-image: url('../images/affiche-film.jpg');
 }
+.ContainerFlexWrapAffiche {
+    display: flex;
+    overflow-x: auto;
+    /*flex-wrap: wrap;*/
+    align-items: center;
+    justify-content: flex-start;
+    margin: 20px;
+    padding:10px;
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+.Vignette {
+    margin: 20px;
+    width: 250px;
+    height: 350px;
+}
+
+.btn btn-danger {
+    background-color: #D9001B;
+}
+.ContainerFlexColumn >h1 {
+    margin: 30px;
+    padding: 30px;
+}
+

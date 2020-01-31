@@ -2,25 +2,28 @@
 @{ViewBag.Title = "Inscription";}
 
 @* Formulaire d'inscription *@
-    <div class="InscriptionContent">
-        <h3>S'inscrire à MediaStream</h3>
-        @using (Html.BeginForm())
-        {
-            <div class="formCase">
-            @Html.Label("Login")
+
+
+
+<div class="InscriptionContent">
+    <h3>S'inscrire à MediaStream</h3>
+    @using (Html.BeginForm())
+    {
+        <div class="form-group">
+            @Html.Label("Choisissez votre login")
             <br />
             @Html.TextBox("Login")
             <br />
             @Html.ValidationMessage("Login")
         </div>
-        <div class="formCase">
+        <div class="form-group">
             @Html.Label("Password")
             <br />
             @Html.Password("Password")
             <br />
             @Html.ValidationMessage("Password")
         </div>
-        <button type="submit" name="Inscription" value="Inscription" class="InscriptionButton">Inscription</button>
+        <button type="submit" name="Inscription" value="Inscription" class="ButtonForm">Inscription</button>
     }
 </div>
 
