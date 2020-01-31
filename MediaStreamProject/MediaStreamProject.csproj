@@ -131,6 +131,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\NoteController.cs" />
+    <Compile Include="Controllers\QuizzController.cs" />
     <Compile Include="Controllers\SerieController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -163,6 +164,7 @@
     <Compile Include="Models\Note.cs" />
     <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\Episode.cs" />
+    <Compile Include="Models\QuizzResult.cs" />
     <Compile Include="Models\Season.cs" />
     <Compile Include="Models\Serie.cs" />
     <Compile Include="Models\Film.cs" />
@@ -200,6 +202,9 @@
     <Content Include="Views\Film\VideoFilms.cshtml" />
     <Content Include="Views\Home\Research.cshtml" />
     <Content Include="Views\Note\NoterFilm.cshtml" />
+    <Content Include="Views\Quizz\Index.cshtml" />
+    <Content Include="Views\Quizz\QuizzSerie.cshtml" />
+    <Content Include="Views\Quizz\Results.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
