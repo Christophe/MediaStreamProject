@@ -1,103 +1,166 @@
 ﻿@model MediaStreamProject.Models.Model1
-<h2>Films</h2>
+
 @*Affiche les Films par genre*@
+
 <div class="ContainerFlexColumn">
-    <p>
+<h1>Films</h1>
+
+    <div class="ContainerFlexColumn">
         <h3>Action</h3>
-        @foreach (MediaStreamProject.Models.Film film in ViewBag.Film)
-        {
-            if (film.Genre == MediaStreamProject.Models.Genre.Action)
+        <div class="ContainerFlexWrapAffiche">
+
+            @foreach (MediaStreamProject.Models.Film film in ViewBag.Film)
             {
-                <a href="~/Film/VideoFilms/@film.Id">
-                    <img src="../@film.Image" height="125" width="100" />
-                </a>
-                <br />
-                //@film.Title
+                if (film.Genre == MediaStreamProject.Models.Genre.Action)
+                {
+                    <div class="ContainerFlexColumn">
+                        <a href="~/Film/VideoFilms/@film.Id">
+                            <img src="../@film.Image" class="Vignette" />
+                        </a>
+
+                        @film.Title
+                        <div>
+                            @Html.ActionLink("A regarder plus tard", "AddWishList", "WishList", null, new { @class = "btn btn-danger" })
+                            @Html.ActionLink("Déja vue", "AddHistorique", "Historique", null, new { @class = "btn btn-danger" })
+
+                        </div>
+
+                    </div>
+                }
             }
-        }
-    </p>
-    <p>
-        <h3>Animation</h3>
+        </div>
+    </div>
+
+
+
+
+    <h3>Animation</h3>
+    <div class="ContainerFlexWrapAffiche">
         @foreach (MediaStreamProject.Models.Film film in ViewBag.Film)
         {
             if (film.Genre == MediaStreamProject.Models.Genre.Animation)
             {
-                <a href="~/Film/VideoFilms/@film.Id">
-                    <img src="../@film.Image" height="125" width="100" />
-                </a>
-                <br />
-                //@film.Title
+                <div class="ContainerFlexColumn">
+                    <a href="~/Film/VideoFilms/@film.Id">
+                        <img src="../@film.Image" class="Vignette" />
+                    </a>
+                    <br />
+                    @film.Title
+                    <div>
+                        @Html.ActionLink("A regarder plus tard", "AddWishList", "WishList", null, new { @class = "btn btn-danger" })
+                        @Html.ActionLink("Déja vue", "AddHistorique", "Historique", null, new { @class = "btn btn-danger" })
+
+                    </div>
+                </div>
             }
         }
-    </p>
-    <p>
-        <h3>Horreur</h3>
+    </div>
+
+
+    <h3>Horreur</h3>
+    <div class="ContainerFlexWrapAffiche">
         @foreach (MediaStreamProject.Models.Film film in ViewBag.Film)
         {
             if (film.Genre == MediaStreamProject.Models.Genre.Horreur)
             {
-                <a href="~/Film/VideoFilms/@film.Id">
-                    <img src="../@film.Image" height="125" width="100" />
-                </a>
-                <br />
-                //@film.Title
+                <div class="ContainerFlexColumn">
+                    <a href="~/Film/VideoFilms/@film.Id">
+                        <img src="../@film.Image" class="Vignette" />
+                    </a>
+                    <br />
+                    @film.Title
+                    <div>
+                        @Html.ActionLink("A regarder plus tard", "AddWishList", "WishList", null, new { @class = "btn btn-danger" })
+                        @Html.ActionLink("Déja vue", "AddHistorique", "Historique", null, new { @class = "btn btn-danger" })
+
+                    </div>
+                </div>
             }
         }
-    </p>
-    <p>
-        <h3>Humour</h3>
+    </div>
+    <h3>Humour</h3>
+    <div class="ContainerFlexWrapAffiche">
         @foreach (MediaStreamProject.Models.Film film in ViewBag.Film)
         {
             if (film.Genre == MediaStreamProject.Models.Genre.Humour)
             {
-                <a href="~/Film/VideoFilms/@film.Id">
-                    <img src="../@film.Image" height="125" width="100" />
-                </a>
-                <br />
-                //@film.Title
+                <div class="ContainerFlexColumn">
+                    <a href="~/Film/VideoFilms/@film.Id">
+                        <img src="../@film.Image" class="Vignette" />
+                    </a>
+                    <br />
+                    @film.Title
+                    <div>
+                        @Html.ActionLink("A regarder plus tard", "AddWishList", "WishList", null, new { @class = "btn btn-danger" })
+                        @Html.ActionLink("Déja vue", "AddHistorique", "Historique", null, new { @class = "btn btn-danger" })
+
+                    </div>
+                </div>
             }
         }
-    </p>
-    <p>
-        <h3>Romantique</h3>
+    </div>
+    <h3>Romantique</h3>
+    <div class="ContainerFlexWrapAffiche">
         @foreach (MediaStreamProject.Models.Film film in ViewBag.Film)
         {
             if (film.Genre == MediaStreamProject.Models.Genre.Romantique)
             {
-                <a href="~/Film/VideoFilms/@film.Id">
-                    <img src="../@film.Image" height="125" width="100" />
-                </a>
-                <br />
-                //@film.Title
+                <div class="ContainerFlexColumn">
+                    <a href="~/Film/VideoFilms/@film.Id">
+                        <img src="../@film.Image" class="Vignette" />
+                    </a>
+                    <br />
+                    @film.Title
+                    <div>
+                        @Html.ActionLink("A regarder plus tard", "AddWishList", "WishList", null, new { @class = "btn btn-danger" })
+                        @Html.ActionLink("Déja vue", "AddHistorique", "Historique", null, new { @class = "btn btn-danger" })
+
+                    </div>
+                </div>
             }
         }
-    </p>
-    <p>
-        <h3>Science Fiction</h3>
+    </div>
+    <h3>Science Fiction</h3>
+    <div class="ContainerFlexWrapAffiche">
         @foreach (MediaStreamProject.Models.Film film in ViewBag.Film)
         {
             if (film.Genre == MediaStreamProject.Models.Genre.Science_Fiction)
             {
-                <a href="~/Film/VideoFilms/@film.Id">
-                    <img src="../@film.Image" height="125" width="100" />
-                </a>
-                <br />
-                //@film.Title
+                <div class="ContainerFlexColumn">
+                    <a href="~/Film/VideoFilms/@film.Id">
+                        <img src="../@film.Image" class="Vignette" />
+                    </a>
+                    <br />
+                    @film.Title
+                    <div>
+                        @Html.ActionLink("A regarder plus tard", "AddWishList", "WishList", null, new { @class = "btn btn-danger" })
+                        @Html.ActionLink("Déja vue", "AddHistorique", "Historique", null, new { @class = "btn btn-danger" })
+
+                    </div>
+                </div>
             }
         }
-    </p>
-    <p>
-        <h3>Thriller</h3>
+    </div>
+    <h3>Thriller</h3>
+    <div class="ContainerFlexWrapAffiche">
         @foreach (MediaStreamProject.Models.Film film in ViewBag.Film)
         {
             if (film.Genre == MediaStreamProject.Models.Genre.Thriller)
             {
-                <a href="~/Film/VideoFilms/@film.Id">
-                    <img src="../@film.Image" height="125" width="100" />
-                </a>
-                <br />
-                //@film.Title
+                <div class="ContainerFlexColumn">
+                    <a href="~/Film/VideoFilms/@film.Id">
+                        <img src="../@film.Image" class="Vignette" />
+                    </a>
+                    <br />
+                    @film.Title
+                    <div>
+                        @Html.ActionLink("A regarder plus tard", "AddWishList", "WishList", null, new { @class = "btn btn-danger" })
+                        @Html.ActionLink("Déja vue", "AddHistorique", "Historique", null, new { @class = "btn btn-danger" })
+
+                    </div>
+                </div>
             }
         }
-    </p>
-</div>
+
+    </div>
+    </div>

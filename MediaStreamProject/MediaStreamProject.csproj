@@ -131,29 +131,14 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\NoteController.cs" />
+    <Compile Include="Controllers\QuizzController.cs" />
     <Compile Include="Controllers\SerieController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202001270943120_Test.cs" />
-    <Compile Include="Migrations\202001270943120_Test.designer.cs">
-      <DependentUpon>202001270943120_Test.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202001271521478_mig.cs" />
-    <Compile Include="Migrations\202001271521478_mig.designer.cs">
-      <DependentUpon>202001271521478_mig.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202001281006504_mig2.cs" />
-    <Compile Include="Migrations\202001281006504_mig2.designer.cs">
-      <DependentUpon>202001281006504_mig2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202001281317267_migSF.cs" />
-    <Compile Include="Migrations\202001281317267_migSF.designer.cs">
-      <DependentUpon>202001281317267_migSF.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202001281536460_migtestfs.cs" />
-    <Compile Include="Migrations\202001281536460_migtestfs.designer.cs">
-      <DependentUpon>202001281536460_migtestfs.cs</DependentUpon>
+    <Compile Include="Migrations\202001311342377_css.cs" />
+    <Compile Include="Migrations\202001311342377_css.designer.cs">
+      <DependentUpon>202001311342377_css.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\202001311358342_testmigcsskhad.cs" />
     <Compile Include="Migrations\202001311358342_testmigcsskhad.designer.cs">
@@ -163,6 +148,7 @@
     <Compile Include="Models\Note.cs" />
     <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\Episode.cs" />
+    <Compile Include="Models\QuizzResult.cs" />
     <Compile Include="Models\Season.cs" />
     <Compile Include="Models\Serie.cs" />
     <Compile Include="Models\Film.cs" />
@@ -200,6 +186,9 @@
     <Content Include="Views\Film\VideoFilms.cshtml" />
     <Content Include="Views\Home\Research.cshtml" />
     <Content Include="Views\Note\NoterFilm.cshtml" />
+    <Content Include="Views\Quizz\Index.cshtml" />
+    <Content Include="Views\Quizz\QuizzSerie.cshtml" />
+    <Content Include="Views\Quizz\Results.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -211,20 +200,8 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202001270943120_Test.resx">
-      <DependentUpon>202001270943120_Test.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202001271521478_mig.resx">
-      <DependentUpon>202001271521478_mig.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202001281006504_mig2.resx">
-      <DependentUpon>202001281006504_mig2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202001281317267_migSF.resx">
-      <DependentUpon>202001281317267_migSF.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202001281536460_migtestfs.resx">
-      <DependentUpon>202001281536460_migtestfs.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202001311342377_css.resx">
+      <DependentUpon>202001311342377_css.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202001311358342_testmigcsskhad.resx">
       <DependentUpon>202001311358342_testmigcsskhad.cs</DependentUpon>
