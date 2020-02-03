@@ -21,11 +21,11 @@ namespace MediaStreamProject.Controllers
             Film film = null;
             var userId = (int)Session["userId"];
 
-            // Recuperation des Notes de ce Film et comparaison de UserId et Session["userId"]
             using (var model = new Model1())
             {
+                // Recuperation des Notes de ce Film et comparaison de UserId et Session["userId"]
                 var note = (from nts in model.Notes
-                            where nts.FilmId.Equals(filmId) && nts.UserId.Equals(userId)
+                            where nts.MediaId.Equals(filmId) && nts.UserId.Equals(userId)
                             select nts).FirstOrDefault();
                 if (note == null)
                 {
@@ -35,20 +35,49 @@ namespace MediaStreamProject.Controllers
                     model.SaveChanges();
 
                     // Modification de la BDD film
-                    // Recuperation de l'ID du film envoye par la note
                     film = model.Films.Find(filmId);
-                    // On incrémente le compteur NoteCompteur de 1
                     film.NoteCompteur = film.NoteCompteur + 1;
-                    // On additionne la nouvelle note avec la NoteTotal
-                    film.NoteTotal = film.NoteTotal + newNote.Notes;
-                    // La note du film est NoteTotal/NoteCompteur
+                    film.NoteTotal = film.NoteTotal + newNote.ValeurNote;
                     film.Note = (film.NoteTotal / film.NoteCompteur);
-
-                    // Sauvegarde les changements dans la BDD
                     model.SaveChanges();
                 }
             }
             return View();
+        }
+        // GET : Methode pour noter une serie
+        public ActionResult NoterSerie()
+        {
+            return View();
+        }
+        // POST : Methode pour noter une serie
+        [HttpPost]
+        public ActionResult NoterSerie(int noteValeur, int serieId)
+        {
+            Serie serie = null;
+            var userId = (int)Session["userId"];
+
+            using (var model = new Model1())
+            {
+                // Recuperation des Notes de cette Serie et comparaison de UserId
+                var note = (from nts in model.Notes
+                            where nts.MediaId.Equals(serieId) && nts.UserId.Equals(userId)
+                            select nts).FirstOrDefault();
+                if (note == null)
+                {
+                    // Modification de la BDD Note
+                    Note newNote = new Note(noteValeur, (int)Session["userId"], serieId);
+                    model.Notes.Add(newNote);
+                    model.SaveChanges();
+
+                    // Modification de la BDD Serie
+                    serie = model.Series.Find(serieId);
+                    serie.NoteCompteur = serie.NoteCompteur + 1;
+                    serie.NoteTotal = serie.NoteTotal + newNote.ValeurNote;
+                    serie.Note = (serie.NoteTotal / serie.NoteCompteur);
+                    model.SaveChanges();
+                }
+                return View();
+            }
         }
     }
 }
