@@ -1,8 +1,46 @@
 ﻿@{ MediaStreamProject.Models.Film film = ViewBag.Film;}
-
 @{ViewBag.Title = "VideoFilms";}
 
-<h2>@film.Title</h2>
-<video controls>
-    <source src=@film.Video />
-</video>
+<div>
+    <h2>@film.Title</h2>
+    <video controls>
+        <source src=@film.Video />
+    </video>
+</div>
+
+<div class="rate">
+    @* La feuille de style va modifier les boutons radio en etoile *@
+    <link rel="stylesheet" type="text/css" href="~/Content/Note.css">
+    <p>Noter ce film</p>
+    <input type="radio" id="star5" name="rate" value="5" />
+    <label for="star5" title="5 stars"> 5 stars</label>
+    <input type="radio" id="star4" name="rate" value="4" />
+    <label for="star4" title="4 stars"> 4 stars</label>
+    <input type="radio" id="star3" name="rate" value="3" />
+    <label for="star3" title="3 stars"> 3 stars</label>
+    <input type="radio" id="star2" name="rate" value="2" />
+    <label for="star2" title="2 stars"> 2 stars</label>
+    <input type="radio" id="star1" name="rate" value="1" />
+    <label for="star1" title="1 star"> 1 star</label>
+    <br />
+</div>
+<input type="submit" id="submit" value="Noter" />
+
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+    // Depart : quand on clique sur le submit
+    $("input[type='submit']").click(function () {
+        // Quand on a un radio button checked on le stock dans une variable radioValue
+        var radioValue = $("input[name='rate']:checked").val();
+        if (radioValue) {
+            alert("Vous avez donner une note de " + radioValue + " à ce film.");
+        }
+        $.ajax({
+            type: 'POST',
+            url: "/Note/NoterFilm",
+            data: '{"noteValeur" : "' + radioValue + '", "filmId" : "' + @film.Id + '"}',
+            contentType: 'application/json; charset=utf-8',
+            dataType: 'json',
+        });
+    });
+</script>

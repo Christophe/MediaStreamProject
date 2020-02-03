@@ -11,6 +11,13 @@ namespace MediaStreamProject.Models
     {
         public Note() { }
 
+        public Note(int notes, int userId, int filmId)
+        {
+            Notes = notes;
+            UserId = userId;
+            FilmId = filmId;
+        }
+
         [Key]
         public int Id { get; set; }
         public int Notes { get; set; }
