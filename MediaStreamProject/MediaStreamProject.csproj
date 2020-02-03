@@ -137,13 +137,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202001311342377_css.cs" />
-    <Compile Include="Migrations\202001311342377_css.designer.cs">
-      <DependentUpon>202001311342377_css.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202001311358342_testmigcsskhad.cs" />
-    <Compile Include="Migrations\202001311358342_testmigcsskhad.designer.cs">
-      <DependentUpon>202001311358342_testmigcsskhad.cs</DependentUpon>
+    <Compile Include="Migrations\202002030915037_test2.cs" />
+    <Compile Include="Migrations\202002030915037_test2.designer.cs">
+      <DependentUpon>202002030915037_test2.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\FilmHistorique.cs" />
@@ -206,11 +202,8 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202001311342377_css.resx">
-      <DependentUpon>202001311342377_css.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202001311358342_testmigcsskhad.resx">
-      <DependentUpon>202001311358342_testmigcsskhad.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202002030915037_test2.resx">
+      <DependentUpon>202002030915037_test2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

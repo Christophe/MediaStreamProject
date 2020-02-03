@@ -26,7 +26,7 @@ namespace MediaStreamProject.Models
         public string Password { get; set; }
         // Champ int Role Nullable avec le ? (User : null et Admin : 1)
         public int? Role { get; set; }
-        public List<int> FilmWishList { get; set; }
+        
 
 
     }

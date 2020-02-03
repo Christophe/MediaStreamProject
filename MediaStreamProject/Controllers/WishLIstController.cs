@@ -11,20 +11,10 @@ namespace MediaStreamProject.Controllers
     {
         // GET: WishLIst
         static Model1 model = new Model1();
+        static List<Film> films = new List<Film>();
         public ActionResult AddFilmWishList(Film film)
         {
-            if (Session["FilmWishList"] == null)
-            {
-                Session["FilmWishList"] = new List<Film>();
-            }
-            List<Film> filmavoir = (List<Film>)Session["FilmWishList"];
-            filmavoir.Add(film);
-            Session["FilmWishList"] = filmavoir;
-            ViewBag.wishList = Session["FilmWishList"];
-
-            
-
-
+            films.Add(film);
 
             return View("FilmWishList");
         }
