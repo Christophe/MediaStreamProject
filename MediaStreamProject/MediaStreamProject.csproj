@@ -133,6 +133,7 @@
     <Compile Include="Controllers\NoteController.cs" />
     <Compile Include="Controllers\QuizzController.cs" />
     <Compile Include="Controllers\SerieController.cs" />
+    <Compile Include="Controllers\WishLIstController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -145,6 +146,8 @@
       <DependentUpon>202001311358342_testmigcsskhad.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\FilmHistorique.cs" />
+    <Compile Include="Models\FilmWishList.cs" />
     <Compile Include="Models\Note.cs" />
     <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\Episode.cs" />
@@ -152,6 +155,8 @@
     <Compile Include="Models\Season.cs" />
     <Compile Include="Models\Serie.cs" />
     <Compile Include="Models\Film.cs" />
+    <Compile Include="Models\SerieHistorique.cs" />
+    <Compile Include="Models\SerieWishList.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\Model1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -189,6 +194,7 @@
     <Content Include="Views\Quizz\Index.cshtml" />
     <Content Include="Views\Quizz\QuizzSerie.cshtml" />
     <Content Include="Views\Quizz\Results.cshtml" />
+    <Content Include="Views\WishLIst\WishList.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

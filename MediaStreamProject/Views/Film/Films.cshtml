@@ -20,7 +20,7 @@
 
                         @film.Title
                         <div>
-                            @Html.ActionLink("A regarder plus tard", "AddWishList", "WishList", null, new { @class = "btn btn-danger" })
+                            @Html.ActionLink("A regarder plus tard", "AddFilmWishList", "WishList", @film.Id, new { @class = "btn btn-danger" })
                             @Html.ActionLink("Déja vue", "AddHistorique", "Historique", null, new { @class = "btn btn-danger" })
 
                         </div>
