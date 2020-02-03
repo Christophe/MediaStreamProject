@@ -137,9 +137,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202002030915037_test2.cs" />
-    <Compile Include="Migrations\202002030915037_test2.designer.cs">
-      <DependentUpon>202002030915037_test2.cs</DependentUpon>
+    <Compile Include="Migrations\202002031006324_mig1.cs" />
+    <Compile Include="Migrations\202002031006324_mig1.designer.cs">
+      <DependentUpon>202002031006324_mig1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\FilmHistorique.cs" />
@@ -202,8 +202,8 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202002030915037_test2.resx">
-      <DependentUpon>202002030915037_test2.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202002031006324_mig1.resx">
+      <DependentUpon>202002031006324_mig1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
