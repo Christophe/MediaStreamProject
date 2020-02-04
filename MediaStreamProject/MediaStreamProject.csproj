@@ -137,25 +137,26 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202002030915037_test2.cs" />
-    <Compile Include="Migrations\202002030915037_test2.designer.cs">
-      <DependentUpon>202002030915037_test2.cs</DependentUpon>
+    <Compile Include="Migrations\202002040955385_test.cs" />
+    <Compile Include="Migrations\202002040955385_test.designer.cs">
+      <DependentUpon>202002040955385_test.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202002031022265_test3.cs" />
-    <Compile Include="Migrations\202002031022265_test3.designer.cs">
-      <DependentUpon>202002031022265_test3.cs</DependentUpon>
+    <Compile Include="Migrations\202002041305204_test1.cs" />
+    <Compile Include="Migrations\202002041305204_test1.designer.cs">
+      <DependentUpon>202002041305204_test1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202002031408229_test4.cs" />
-    <Compile Include="Migrations\202002031408229_test4.designer.cs">
-      <DependentUpon>202002031408229_test4.cs</DependentUpon>
+    <Compile Include="Migrations\202002041332327_test2.cs" />
+    <Compile Include="Migrations\202002041332327_test2.designer.cs">
+      <DependentUpon>202002041332327_test2.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202002031600544_test.cs" />
-    <Compile Include="Migrations\202002031600544_test.designer.cs">
-      <DependentUpon>202002031600544_test.cs</DependentUpon>
+    <Compile Include="Migrations\202002041336487_test3.cs" />
+    <Compile Include="Migrations\202002041336487_test3.designer.cs">
+      <DependentUpon>202002041336487_test3.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\FilmHistorique.cs" />
     <Compile Include="Models\FilmWishList.cs" />
+    <Compile Include="Models\NewClassWishList.cs" />
     <Compile Include="Models\Note.cs" />
     <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\Episode.cs" />
@@ -181,7 +182,6 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="packages.config" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Login\Connexion.cshtml" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
@@ -203,6 +203,7 @@
     <Content Include="Views\Quizz\QuizzSerie.cshtml" />
     <Content Include="Views\Quizz\Results.cshtml" />
     <Content Include="Views\WishList\WishList.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -214,17 +215,17 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202002030915037_test2.resx">
-      <DependentUpon>202002030915037_test2.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202002040955385_test.resx">
+      <DependentUpon>202002040955385_test.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002031022265_test3.resx">
-      <DependentUpon>202002031022265_test3.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202002041305204_test1.resx">
+      <DependentUpon>202002041305204_test1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002031408229_test4.resx">
-      <DependentUpon>202002031408229_test4.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202002041332327_test2.resx">
+      <DependentUpon>202002041332327_test2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002031600544_test.resx">
-      <DependentUpon>202002031600544_test.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202002041336487_test3.resx">
+      <DependentUpon>202002041336487_test3.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

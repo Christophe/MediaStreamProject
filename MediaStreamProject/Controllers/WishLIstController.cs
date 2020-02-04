@@ -47,26 +47,27 @@ namespace MediaStreamProject.Controllers
             model.SaveChanges();
 
 
-            return View("Films");
+            return RedirectToAction("AfficherWishList");
             
         }
-        
+
         public ActionResult AfficherWishList()
         {
             var Film = model.Films;
             var FilmWishList = model.FilmWishLists;
+            var user = (int)Session["userId"];
 
             var joinQuery =
                 from film in Film
                 from filmList in FilmWishList
-                where filmList.FilmId == film.Id
-                select new nouveauTableau { id = film.Id, titre = film.Title, image = film.Image, video= film.Video};
-            ViewBag.List_WishList = joinQuery;
-
+                where (filmList.FilmId == film.Id) && (filmList.UserId == user)
+                select new NewClassWishList() { id = film.Id, titre = film.Title, image = film.Image, video = film.Video };
+            
+            ViewBag.List_WishList = joinQuery.ToList();
             return View("WishList");
 
         }
-       
-        
+
+
     }
 }

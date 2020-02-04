@@ -7,13 +7,13 @@ namespace MediaStreamProject.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.0")]
-    public sealed partial class test : IMigrationMetadata
+    public sealed partial class test3 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(test));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(test3));
         
         string IMigrationMetadata.Id
         {
-            get { return "202002031600544_test"; }
+            get { return "202002041336487_test3"; }
         }
         
         string IMigrationMetadata.Source

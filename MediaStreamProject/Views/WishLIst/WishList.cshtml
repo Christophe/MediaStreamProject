@@ -1,23 +1,20 @@
-﻿@model MediaStreamProject.Models.Model1
+﻿@model MediaStreamProject.Models.NewClassWishList
 @{
     ViewBag.Title = "WishList";
 }
-
+Console.WriteLine(typeof(Array(ViewBag.List_WishList)));
 
 <h2>WishList</h2>
-@foreach (MediaStreamProject.Models.FilmWishList filmWishList in ViewBag.List_WishList)
-    {
+@foreach (MediaStreamProject.Models.NewClassWishList film in (List<MediaStreamProject.Models.NewClassWishList>)ViewBag.List_WishList)
+{
 
-        <div class="ContainerFlexColumn">
-            <a href="~/Film/VideoFilms/@filmWishList.FilmId">
-                @*<img src="../@filmWishList.Image" class="Vignette" />*@
-            </a>
-
-            @*@filmWishList.Title*@
-
-
-        </div>
-    }
+<div class="ContainerFlexColumn">
+    <a href="~/Film/VideoFilms/@film.id">
+        <img src="../@film.image" class="Vignette" />
+    </a>
+    @film.titre
+</div>
+}
 
 
 

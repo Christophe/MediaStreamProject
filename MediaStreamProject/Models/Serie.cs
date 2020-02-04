@@ -20,8 +20,11 @@ namespace MediaStreamProject.Models
         public string Title { get; set; }
         public Genre Genre { get; set; }
         public string Synopsis { get; set; }
-        public int Note { get; set; }
         public int Compteur { get; set; }
         public string Image { get; set; }
+
+        public int Note { get; set; }
+        public int NoteCompteur { get; set; }
+        public int NoteTotal { get; set; }
     }
 }

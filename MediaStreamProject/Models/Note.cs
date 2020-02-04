@@ -11,12 +11,17 @@ namespace MediaStreamProject.Models
     {
         public Note() { }
 
+        public Note(int notes, int userId, int mediaId)
+        {
+            ValeurNote = notes;
+            UserId = userId;
+            MediaId = mediaId;
+        }
+
         [Key]
         public int Id { get; set; }
-        public int Notes { get; set; }
+        public int ValeurNote { get; set; }
         public int UserId { get; set; }
-        public int FilmId { get; set; }
-        [ForeignKey("FilmId")]
-        public virtual Film film { get; set; }
+        public int MediaId { get; set; }
     }
 }

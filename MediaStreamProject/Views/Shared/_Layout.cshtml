@@ -1,90 +1,79 @@
 ﻿@model MediaStreamProject.Models.User
-@{
-    bool test = false; }
 
-    @* if ((bool)@ViewData["Authentifie"] == true)
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.8.3.js"></script>
+</head>
+<body>
+
+    <header>
+
+
+        <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Accueil", "Index", "Home", null, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Films", "Films", "Film", null, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Séries", "Series", "Serie", null, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Quizz", "Index", "Quizz", null, new { @class = "nav-link" })</li>
+                </ul>
+
+                @using (Html.BeginForm("Research", "Home"))
+                {
+                    @Html.Label("Research : ")
+                    @Html.TextBox("research")
+                    <input type="submit" value="Filter" />
+
+                }
+            </div>
+            @if (Request.IsAuthenticated)
             {
-                test = (bool)@ViewData["Authentifie"];
+                @Html.ActionLink("Deconnexion", "Deconnexion", "Login", null, new { @class = "ConnexionButton" })
             }
-        }*@
+            else
+            {
+                @* Action Link pour s'identifier qui utilise l'action Connexion du controller Login  *@
+                @Html.ActionLink("S'identifier", "Connexion", "Login", null, new { @class = "ConnexionButton" })
 
+            }
 
-    <!DOCTYPE html>
-    <html>
-    <head>
-
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>@ViewBag.Title - My ASP.NET Application</title>
-        <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
-        <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
-        <script src="~/Scripts/modernizr-2.8.3.js"></script>
-    </head>
-    <body>
-
-        <header>
-
-
-            <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
-                <div class="container">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav">
-                        <li>@Html.ActionLink("Accueil", "Index", "Home", null, new { @class = "nav-link" })</li>
-                        <li>@Html.ActionLink("Films", "Films", "Film", null, new { @class = "nav-link" })</li>
-                        <li>@Html.ActionLink("Séries", "Series", "Serie", null, new { @class = "nav-link" })</li>
-                        <li>@Html.ActionLink("Quizz", "Index", "Quizz", null, new { @class = "nav-link" })</li>
-                    </ul>
-
-                    @using (Html.BeginForm("Research", "Home"))
-                    {
-                        @Html.Label("Research : ")
-                        @Html.TextBox("research")
-                        <input type="submit" value="Filter" />
-
-                    }
-
-                </div>
-                @if (test == true)
-                {
-                    @Model.Login
-                    @Html.ActionLink("Deconnexion", "Deconnexion", "Login", null, new { @class = "ConnexionButton" })
-                }
-                else
-                {
-                    @* Action Link pour s'identifier qui utilise l'action Connexion du controller Login  *@
-                    @Html.ActionLink("S'identifier", "Connexion", "Login", null, new { @class = "ConnexionButton" })
-
-                }
-
-            </nav>
+        </nav>
 
 
 
 
-        </header>
-        @*============================================================================================*@
+    </header>
+    @*============================================================================================*@
 
 
-        <div class="container body-content">
-            @RenderBody()
-            <hr />
-            <footer>
-                <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-            </footer>
-        </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
 
-        <script src="~/Scripts/jquery-3.4.1.min.js"></script>
-        <script src="~/Scripts/bootstrap.min.js"></script>
-    </body>
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+</body>
 </html>
