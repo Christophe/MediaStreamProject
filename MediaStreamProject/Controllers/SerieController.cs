@@ -52,5 +52,13 @@ namespace MediaStreamProject.Controllers
             ViewBag.Episode = episode;
             return View("VideoEpisodes");
         }
+        // Methode pour noter
+        public ActionResult NoterSerie(int id)
+        {
+            var f = model.Series;
+            Serie serie = f.Find(id);
+            ViewBag.Serie = serie;
+            return View();
+        }
     }
 }

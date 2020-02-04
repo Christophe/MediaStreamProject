@@ -137,9 +137,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202002031006324_mig1.cs" />
-    <Compile Include="Migrations\202002031006324_mig1.designer.cs">
-      <DependentUpon>202002031006324_mig1.cs</DependentUpon>
+    <Compile Include="Migrations\202002040935536_mignoteseriefilm.cs" />
+    <Compile Include="Migrations\202002040935536_mignoteseriefilm.designer.cs">
+      <DependentUpon>202002040935536_mignoteseriefilm.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\FilmHistorique.cs" />
@@ -191,6 +191,7 @@
     <Content Include="Views\Quizz\QuizzSerie.cshtml" />
     <Content Include="Views\Quizz\Results.cshtml" />
     <Content Include="Views\WishLIst\WishList.cshtml" />
+    <Content Include="Views\Serie\NoterSerie.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -202,8 +203,8 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202002031006324_mig1.resx">
-      <DependentUpon>202002031006324_mig1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202002040935536_mignoteseriefilm.resx">
+      <DependentUpon>202002040935536_mignoteseriefilm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

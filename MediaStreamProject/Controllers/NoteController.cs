@@ -23,7 +23,7 @@ namespace MediaStreamProject.Controllers
 
             using (var model = new Model1())
             {
-                // Recuperation des Notes de ce Film et comparaison de UserId et Session["userId"]
+                // Recuperation des Notes de ce Film et comparaison de UserId avec Session["userId"]
                 var note = (from nts in model.Notes
                             where nts.MediaId.Equals(filmId) && nts.UserId.Equals(userId)
                             select nts).FirstOrDefault();
@@ -58,7 +58,7 @@ namespace MediaStreamProject.Controllers
 
             using (var model = new Model1())
             {
-                // Recuperation des Notes de cette Serie et comparaison de UserId
+                // Recuperation des Notes de cette Serie et comparaison avec UserId
                 var note = (from nts in model.Notes
                             where nts.MediaId.Equals(serieId) && nts.UserId.Equals(userId)
                             select nts).FirstOrDefault();
