@@ -7,18 +7,67 @@ using System.Web.Mvc;
 
 namespace MediaStreamProject.Controllers
 {
-    public class WishLIstController : Controller
+    public class WishListController : Controller
     {
         // GET: WishLIst
         static Model1 model = new Model1();
-        static List<Film> films = new List<Film>();
-        public ActionResult AddFilmWishList(Film film)
+         
+        
+        public ActionResult AddFilmWishList(int id )
         {
-            films.Add(film);
+            
+            var user =(int) Session["userId"];
 
-            return View("FilmWishList");
+            var FilmWishList = model.FilmWishLists;
+            FilmWishList filmavoir = null;
+            var query = from FilmList in FilmWishList
+                        where (FilmList.UserId == user) && (FilmList.FilmId == id)
+                        select FilmList;
+
+            foreach (var item in query)
+            {
+                filmavoir = item;
+            }
+                if (filmavoir == null)
+                {
+                    FilmWishList filmWishList = new FilmWishList(user, id);
+                    model.FilmWishLists.Add(filmWishList);
+
+                    
+                }
+
+                else
+                {
+                    ViewBag.message = "ce film fait déja partie de votre wishliste";
+                }
+            
+
+            
+
+            model.SaveChanges();
+
+
+            return RedirectToAction("AfficherWishList");
+            
         }
-        
-        
+
+        public ActionResult AfficherWishList()
+        {
+            var Film = model.Films;
+            var FilmWishList = model.FilmWishLists;
+            var user = (int)Session["userId"];
+
+            var joinQuery =
+                from film in Film
+                from filmList in FilmWishList
+                where (filmList.FilmId == film.Id) && (filmList.UserId == user)
+                select new NewClassWishList() { id = film.Id, titre = film.Title, image = film.Image, video = film.Video };
+            
+            ViewBag.List_WishList = joinQuery.ToList();
+            return View("WishList");
+
+        }
+
+
     }
 }
