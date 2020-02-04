@@ -133,13 +133,25 @@
     <Compile Include="Controllers\NoteController.cs" />
     <Compile Include="Controllers\QuizzController.cs" />
     <Compile Include="Controllers\SerieController.cs" />
-    <Compile Include="Controllers\WishLIstController.cs" />
+    <Compile Include="Controllers\WishListController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Migrations\202002030915037_test2.cs" />
     <Compile Include="Migrations\202002030915037_test2.designer.cs">
       <DependentUpon>202002030915037_test2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002031022265_test3.cs" />
+    <Compile Include="Migrations\202002031022265_test3.designer.cs">
+      <DependentUpon>202002031022265_test3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002031408229_test4.cs" />
+    <Compile Include="Migrations\202002031408229_test4.designer.cs">
+      <DependentUpon>202002031408229_test4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002031600544_test.cs" />
+    <Compile Include="Migrations\202002031600544_test.designer.cs">
+      <DependentUpon>202002031600544_test.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\FilmHistorique.cs" />
@@ -190,7 +202,7 @@
     <Content Include="Views\Quizz\Index.cshtml" />
     <Content Include="Views\Quizz\QuizzSerie.cshtml" />
     <Content Include="Views\Quizz\Results.cshtml" />
-    <Content Include="Views\WishLIst\WishList.cshtml" />
+    <Content Include="Views\WishList\WishList.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -204,6 +216,15 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202002030915037_test2.resx">
       <DependentUpon>202002030915037_test2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002031022265_test3.resx">
+      <DependentUpon>202002031022265_test3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002031408229_test4.resx">
+      <DependentUpon>202002031408229_test4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002031600544_test.resx">
+      <DependentUpon>202002031600544_test.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
