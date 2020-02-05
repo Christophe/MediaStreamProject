@@ -40,5 +40,11 @@ namespace MediaStreamProject.Controllers
             ViewBag.ResearchFilms = Query_films.ToList<Film>();
             return View();
         }
+
+        [Authorize]
+        public ActionResult Quizz()
+        {
+            return View();
+        }
     }
 }

@@ -7,23 +7,17 @@ using System.Web.Mvc;
 
 namespace MediaChill.Controllers
 {
-    public class QuizzController : Controller
+    public class QuizzSerieController : Controller
     {
         static Model1 model = new Model1();
-        static int score;
-        static bool Quizz;
-        static Dictionary<string, string> check = new Dictionary<string, string>();
+        static DateTime DateStart;
+        static Dictionary<string, string> userAnswers = new Dictionary<string, string>();
         // GET: Quizz
-        public ActionResult Index()
-        {
-            return View();
-        }
-
+        [Authorize]
         public ActionResult QuizzSerie()
         {
-
+            bool Quizz =true;
             ViewBag.ID = 0;
-            Quizz = true;
             ViewBag.Quizz = Quizz;
             return View();
 
@@ -32,12 +26,14 @@ namespace MediaChill.Controllers
         [HttpPost]
         public ActionResult Start()
         {
+            DateStart = DateTime.Now;
+            bool Quizz;
             int userID = Convert.ToInt32(Session["userId"]);
             var quizzresults = model.QuizzResults;
             QuizzResult queryQuizzresults = null;
-            // On stock toutes les series dans ViewBag.Serie
+            
             var Query = from result in quizzresults
-                        where result.UserID == userID
+                        where result.UserID == userID && result.Theme == "serie"
                         select result;
             foreach (var item in Query)
             {
@@ -45,8 +41,7 @@ namespace MediaChill.Controllers
             }
 
             if (queryQuizzresults == null)
-            {
-                score = 0;
+            { 
                 ViewBag.ID = 1;
                 Quizz = true;
                 ViewBag.Quizz = Quizz;
@@ -63,19 +58,19 @@ namespace MediaChill.Controllers
         [HttpPost]
         public ActionResult Question1(string answer1)
         {
-
+            bool Quizz = true;
             if (Quizz)
             {
                 ViewBag.ID = 2;
                 try
                 {
-                    check.Add("6", answer1);
+                    userAnswers.Add("Question1", answer1);
 
                 }
                 catch (Exception)
                 {
-                    check.Remove("6");
-                    check.Add("6", answer1);
+                    userAnswers.Remove("Question1");
+                    userAnswers.Add("Question1", answer1);
                 }
             }
             ViewBag.Quizz = Quizz;
@@ -85,10 +80,20 @@ namespace MediaChill.Controllers
         [HttpPost]
         public ActionResult Question2(string answer2)
         {
+            bool Quizz = true;
             if (Quizz)
             {
                 ViewBag.ID = 3;
-                check.Add("5", answer2);
+                try
+                {
+                    userAnswers.Add("Question2", answer2);
+                }
+                catch (Exception)
+                {
+                    userAnswers.Remove("Question2");
+                    userAnswers.Add("Question2", answer2);
+
+                }
             }
             ViewBag.Quizz = Quizz;
             return View("QuizzSerie");
@@ -97,21 +102,34 @@ namespace MediaChill.Controllers
         [HttpPost]
         public ActionResult Question3(string answer3)
         {
+            bool Quizz = true;
             int userID = Convert.ToInt32(Session["userId"]);
             var users = model.Users;
+            int score = 0;
+            TimeSpan timeDiff = DateTime.Now - DateStart;
+            double time = timeDiff.TotalSeconds;
             User user = users.Find(userID);
             ViewBag.Quizz = Quizz;
             if (Quizz)
             {
                 ViewBag.ID = 4;
-                check.Add("2", answer3);
+                try
+                {
+                    userAnswers.Add("Question3", answer3);
+                }
+                catch (Exception)
+                {
+                    userAnswers.Remove("Question3");
+                    userAnswers.Add("Question3", answer3);
+
+                }
                 Quizz = false;
             }
 
-
-            foreach (KeyValuePair<string, string> entry in check)
+            Dictionary<string, string> goodAnswers = new Dictionary<string, string>() { { "Question1", "8 août 1988" }, { "Question2", "Mickael" }, { "Question3", "Lito" } };
+            foreach (var key in userAnswers.Keys)
             {
-                if (entry.Key == entry.Value)
+                if (userAnswers[key].Equals(goodAnswers[key]))
                 {
                     score++;
                 }
@@ -124,19 +142,30 @@ namespace MediaChill.Controllers
             quizz.Score = score;
             quizz.Theme = "serie";
             quizz.UserLogin = user.Login;
+            quizz.Time = time;
             model.QuizzResults.Add(quizz);
             model.SaveChanges();
-            check.Clear();
+            userAnswers.Clear();
+            ViewBag.time = time;
             return View("QuizzSerie");
         }
 
         public ActionResult Results()
         {
+            List<QuizzResult> allresults = new List<QuizzResult>();
             var quizzresults = model.QuizzResults;
             var Query = from result in quizzresults
-                        orderby result.Score
+                        orderby result.Score descending,result.Time
                         select result;
-            ViewBag.Results = Query.ToList<QuizzResult>();
+            List<QuizzResult> list_results= Query.ToList<QuizzResult>();
+            foreach (var item in list_results)
+            {
+                if (item.Theme == "serie")
+                {
+                    allresults.Add(item);
+                }
+            }
+            ViewBag.Results = allresults.ToList<QuizzResult>();
             return View();
         }
     }

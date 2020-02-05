@@ -131,15 +131,24 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\NoteController.cs" />
-    <Compile Include="Controllers\QuizzController.cs" />
+    <Compile Include="Controllers\QuizzFilmController.cs" />
+    <Compile Include="Controllers\QuizzSerieController.cs" />
     <Compile Include="Controllers\SerieController.cs" />
     <Compile Include="Controllers\WishLIstController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202002031006324_mig1.cs" />
-    <Compile Include="Migrations\202002031006324_mig1.designer.cs">
-      <DependentUpon>202002031006324_mig1.cs</DependentUpon>
+    <Compile Include="Migrations\202002041334271_test.cs" />
+    <Compile Include="Migrations\202002041334271_test.designer.cs">
+      <DependentUpon>202002041334271_test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002041439434_test1.cs" />
+    <Compile Include="Migrations\202002041439434_test1.designer.cs">
+      <DependentUpon>202002041439434_test1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002041507139_test2.cs" />
+    <Compile Include="Migrations\202002041507139_test2.designer.cs">
+      <DependentUpon>202002041507139_test2.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\FilmHistorique.cs" />
@@ -187,10 +196,12 @@
     <Content Include="Views\Film\VideoFilms.cshtml" />
     <Content Include="Views\Home\Research.cshtml" />
     <Content Include="Views\Note\NoterFilm.cshtml" />
-    <Content Include="Views\Quizz\Index.cshtml" />
-    <Content Include="Views\Quizz\QuizzSerie.cshtml" />
-    <Content Include="Views\Quizz\Results.cshtml" />
+    <Content Include="Views\Home\Quizz.cshtml" />
+    <Content Include="Views\QuizzSerie\QuizzSerie.cshtml" />
+    <Content Include="Views\QuizzSerie\Results.cshtml" />
     <Content Include="Views\WishLIst\WishList.cshtml" />
+    <Content Include="Views\QuizzFilm\QuizzFilm.cshtml" />
+    <Content Include="Views\QuizzFilm\Results.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -202,8 +213,14 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202002031006324_mig1.resx">
-      <DependentUpon>202002031006324_mig1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202002041334271_test.resx">
+      <DependentUpon>202002041334271_test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002041439434_test1.resx">
+      <DependentUpon>202002041439434_test1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002041507139_test2.resx">
+      <DependentUpon>202002041507139_test2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
