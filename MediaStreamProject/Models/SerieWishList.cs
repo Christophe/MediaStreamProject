@@ -5,6 +5,13 @@ namespace MediaStreamProject.Models
 {
     public class SerieWishList
     {
+        public SerieWishList() { }
+        public SerieWishList(int userId, int filmId)
+        {
+            UserId = userId;
+            FilmId = filmId;
+        }
+
         [Key]
         public int Id { get; set; }
 

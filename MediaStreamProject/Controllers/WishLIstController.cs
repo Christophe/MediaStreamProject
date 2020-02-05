@@ -61,7 +61,7 @@ namespace MediaStreamProject.Controllers
                 from film in Film
                 from filmList in FilmWishList
                 where (filmList.FilmId == film.Id) && (filmList.UserId == user)
-                select new NewClassWishList() { id = film.Id, titre = film.Title, image = film.Image, video = film.Video };
+                select new NewClassWishList() { id = film.Id, titre = film.Title, genre = film.Genre, image = film.Image, video = film.Video };
             
             ViewBag.List_WishList = joinQuery.ToList();
             return View("WishList");

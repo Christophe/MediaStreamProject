@@ -5,16 +5,18 @@
 Console.WriteLine(typeof(Array(ViewBag.List_WishList)));
 
 <h2>WishList</h2>
-@foreach (MediaStreamProject.Models.NewClassWishList film in (List<MediaStreamProject.Models.NewClassWishList>)ViewBag.List_WishList)
-{
 
-<div class="ContainerFlexColumn">
-    <a href="~/Film/VideoFilms/@film.id">
-        <img src="../@film.image" class="Vignette" />
-    </a>
-    @film.titre
-</div>
-}
+    @foreach (MediaStreamProject.Models.NewClassWishList film in (List<MediaStreamProject.Models.NewClassWishList>)ViewBag.List_WishList)
+    {
+
+        <div class="ContainerFlexColumn">
+
+            <a href="~/Film/VideoFilms/@film.id">
+                <img src="../@film.image" class="Vignette" />
+            </a>
+            @film.titre
+        </div>
+    }
 
 
 

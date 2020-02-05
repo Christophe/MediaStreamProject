@@ -1,0 +1,24 @@
+﻿@model MediaStreamProject.Models.NewClassWishList
+
+@{
+    ViewBag.Title = "Historique";
+}
+
+<h2>Historique</h2>
+
+
+
+<h2>Historique</h2>
+
+@foreach (MediaStreamProject.Models.NewClassWishList film in (List<MediaStreamProject.Models.NewClassWishList>)ViewBag.List_Historique)
+{
+    
+    <div class="ContainerFlexColumn">
+
+        <a href="~/Film/VideoFilms/@film.id">
+            <img src="../@film.image" class="Vignette" />
+        </a>
+        @film.titre
+    </div>
+
+}

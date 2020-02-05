@@ -21,8 +21,9 @@
                         @film.Title
                         <div>
                             <a class="btn btn-danger" href="/WishList/AddFilmWishList/@film.Id">A regarder plus tard</a>
+                            <a class="btn btn-danger" href="/Historique/AddFilmHistorique/@film.Id">Déja vu</a>
                             @*@Html.ActionLink("A regarder plus tard", "AddFilmWishList", "WishList",new { @film.Id }, new { @class = "btn btn-danger" })*@
-                            @Html.ActionLink("Déja vue", "AddHistorique", "Historique", null, new { @class = "btn btn-danger" })
+                            @*@Html.ActionLink("Déja vue", "AddFilmHistorique", "Historique", null, new { @class = "btn btn-danger" })*@
 
                         </div>
 

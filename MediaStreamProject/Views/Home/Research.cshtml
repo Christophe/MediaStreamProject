@@ -3,25 +3,32 @@
     ViewBag.Title = "Research";
 }
 
-@{ string src = "";}
-<h2>Series</h2>
-@foreach (MediaStreamProject.Models.Serie serie in ViewBag.ResearchSerie)
-{
-    src = serie.Image;
-    <a href="~/Serie/Seasons/@serie.Id">
-        <img src=@src height="300" width="200" />
-    </a>
-    <br />
-    @serie.Title
+
+@if (ViewBag.ResearchSeries != null)
+{   <h2>Series</h2>
+    foreach (MediaStreamProject.Models.Serie serie in ViewBag.ResearchSeries)
+    {
+
+        <a href="~/Serie/Seasons/@serie.Id">
+            <img src=@serie.Image class="Vignette" />
+        </a>
+        <br />
+        @serie.Title
+    }
 }
 <br />
-
-<h2>Films</h2>
-@foreach (MediaStreamProject.Models.Film film in ViewBag.ResearchFilm)
+@if (ViewBag.ResearchFilms != null)
 {
+    <h2>Films</h2>
+    foreach (MediaStreamProject.Models.Film film in ViewBag.ResearchFilms)
+    {
 
-    <a href="~/Film/VideoFilms/@film.Id"><img src="../@film.Image" /></a>
-    <br />
-    @film.Title
+        <a href="~/Film/VideoFilms/@film.Id"><img src="../@film.Image" class="Vignette"/></a>
+        <br />
+        @film.Title
 
+    }
 }
+
+
+

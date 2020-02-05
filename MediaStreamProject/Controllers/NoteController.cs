@@ -23,7 +23,7 @@ namespace MediaStreamProject.Controllers
             using (var model = new Model1())
             {
                 note = (from nt in model.Notes
-                        where nt.FilmId.Equals(film.Id) && nt.UserId.Equals(Session["userId"])
+                        where nt.MediaId.Equals(film.Id) && nt.UserId.Equals(Session["userId"])
                         select nt).FirstOrDefault();
             }
 
@@ -36,7 +36,7 @@ namespace MediaStreamProject.Controllers
                 // On incrémente le compteur NoteCompteur de 1
                 film.NoteCompteur = film.NoteCompteur + 1;
                 // On additionne la nouvelle note avec la NoteTotal
-                film.NoteTotal = film.NoteTotal + note.Notes;
+                film.NoteTotal = film.NoteTotal + note.ValeurNote;
                 // La note du film est NoteTotal/NoteCompteur
                 film.Note = (film.NoteTotal % film.NoteCompteur);
 

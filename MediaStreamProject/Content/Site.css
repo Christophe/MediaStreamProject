@@ -21,21 +21,22 @@ textarea {
     /*background-image: url('../images/inception-movie.jpg');*/
 }
 
-.ButtonForm, .ConnexionButtonForm {
+.ButtonForm, .ConnexionButtonForm, .InscriptionButton {
     background-color: #D9001B;
     color: white;
     text-align: center;
     border-radius: 5px;
     padding: 10px;
-    margin:20px;
+    margin: 20px;
     font-size: 24px;
-    
+
 }
 .ConnexionButton {
     float: right;
     
     
 }
+
 
 .ConnexionButton:hover, .InscriptionButton:hover {
     text-decoration: none !important;
