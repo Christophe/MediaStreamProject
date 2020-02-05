@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "Results";
+}
+@{ int classement = 1;}
+<h2>Results</h2>
+<table>
+    <tr>
+        <th>Classement</th>
+        <th>Utilisateur</th>
+        <th>Record(/3)</th>
+        <th>Temps(secondes)</th>
+    </tr>
+
+    @foreach (MediaStreamProject.Models.QuizzResult results in ViewBag.Results)
+    {
+<tr>
+    <td>@classement</td>
+    <td>@results.UserLogin</td>
+    <td>@results.Score</td>
+    <td>@results.Time</td>
+    @{classement++;}
+</tr>
+    }
+</table>

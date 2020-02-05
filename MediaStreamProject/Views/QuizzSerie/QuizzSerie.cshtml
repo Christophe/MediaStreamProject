@@ -1,0 +1,96 @@
+﻿
+@{
+    ViewBag.Title = "QuizzSerie";
+}
+
+<h2>QuizzSerie</h2>
+
+@if (ViewBag.Quizz)
+{
+    switch (ViewBag.ID)
+    {
+        case 0:
+            <text>
+                La série du mois est Sense8 !
+                Are you ready to start the Quizz ?
+
+                @using (Html.BeginForm("Start", "QuizzSerie"))
+                {
+                    <input type="submit" value="Commencer le Quizz" />
+                }
+            </text>
+            break;
+        case 1:
+            <text>
+                <h3">Premiere Question</h3">
+
+                @using (Html.BeginForm("Question1", "QuizzSerie"))
+                {
+                    @Html.Label("A quelle date sont nés les sensitifs ? ");
+                    <br />
+                    <label>@Html.RadioButton("answer1", "18 août 1988")18 août 1988</label>
+                    <br />
+                    <label>@Html.RadioButton("answer1", "8 août 1988")8 août 1988</label>
+                    <br />
+                    <label>@Html.RadioButton("answer1", "9 août 1988")9 août 1988</label>
+                    <br />
+                    <input type="submit" value="Valider" />
+                }
+            </text>
+            break;
+        case 2:
+            <text>
+                <h3">Seconde Question</h3">
+                @using (Html.BeginForm("Question2", "QuizzSerie"))
+                {
+                    @Html.Label("Quel est le prénom qu'avait Nomi avant de devenir une femme ? : ");
+                    <br />
+                    <label>@Html.RadioButton("answer2", "Miguel")Miguel</label>
+                    <br />
+                    <label>@Html.RadioButton("answer2", "Marcel")Marcel</label>
+                    <br />
+                    <label>@Html.RadioButton("answer2", "Mickael")Mickael</label>
+                    <br />
+                    <input type="submit" value="Valider" />
+                }
+            </text>
+            break;
+        case 3:
+            <text>
+                <h3">Troisieme Question</h3">
+                @using (Html.BeginForm("Question3", "QuizzSerie"))
+                {
+                    @Html.Label("Qui aide Wolfgang à tuer son cousin ? ");
+                    <br />
+                    <label>@Html.RadioButton("answer3", "Sun")Sun</label>
+                    <br />
+                    <label>@Html.RadioButton("answer3", "Will")Will</label>
+                    <br />
+                    <label>@Html.RadioButton("answer3", "Lito")Lito</label>
+                    <br />
+                    <input type="submit" value="Valider" />
+                }
+            </text>
+            break;
+        case 4:
+            <text>
+                <h3">Resultats</h3">
+                @ViewBag.score / 3
+                Vous avez mis @ViewBag.time secondes pour faire ce quizz.
+            </text>
+            break;
+        default:
+            break;
+    }
+}
+else
+{
+    <text>
+        <h3">Resultats</h3">
+        <p>Quizz deja fait !</p>
+        @Html.ActionLink("Resultats", "Results", "QuizzSerie")
+    </text>
+}
+
+
+

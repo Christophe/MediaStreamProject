@@ -1,9 +1,10 @@
 ﻿@model MediaStreamProject.Models.Model1
+@{ string note = "0"; }
 
 @*Affiche les Films par genre*@
 
 <div class="ContainerFlexColumn">
-<h1>Films</h1>
+    <h1>Films</h1>
 
     <div class="ContainerFlexColumn">
         <h3>Action</h3>
@@ -92,6 +93,27 @@
                     </a>
                     <br />
                     @film.Title
+                    @switch (film.Note)
+                    {
+                        case 1:
+                            note = "★";
+                            break;
+                        case 2:
+                            note = "★★";
+                            break;
+                        case 3:
+                            note = "★★★";
+                            break;
+                        case 4:
+                            note = "★★★★";
+                            break;
+                        case 5:
+                            note = "★★★★★";
+                            break;
+                        default:
+                            break;
+                    }
+                    <p>Note : @note</p>
                     <div>
                         @Html.ActionLink("A regarder plus tard", "AddWishList", "WishList", null, new { @class = "btn btn-danger" })
                         @Html.ActionLink("Déja vue", "AddHistorique", "Historique", null, new { @class = "btn btn-danger" })
@@ -165,4 +187,4 @@
         }
 
     </div>
-    </div>
+</div>

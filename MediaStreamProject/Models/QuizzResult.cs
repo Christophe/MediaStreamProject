@@ -19,5 +19,6 @@ namespace MediaStreamProject.Models
         public string UserLogin { get; set; }
         public int Score { get; set; }
         public string Theme { get; set; }
+        public double Time { get; set; }
     }
 }

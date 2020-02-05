@@ -1,4 +1,6 @@
 ﻿@model MediaStreamProject.Models.Model1
+    @{ string note = " ";}
+
 @*Affiche les Series par genre*@
 <div class="ContainerFlexColumn">
     <h1>Séries</h1>
@@ -57,13 +59,35 @@
         {
             if (serie.Genre == MediaStreamProject.Models.Genre.Humour)
             {
-                <div class="ContainerFlexColumn">
-                    <a href="~/Serie/Seasons/@serie.Id">
-                        <img src="../@serie.Image" class="Vignette"/>
-                    </a>
-                    <br />
-                    //@serie.Title
-                </div>
+        <div class="ContainerFlexColumn">
+            <a href="~/Serie/Seasons/@serie.Id">
+                <img src="../@serie.Image" class="Vignette" />
+            </a>
+            <br />
+            @serie.Title
+            @switch (serie.Note)
+            {
+                case 1:
+                    note = "★";
+                    break;
+                case 2:
+                    note = "★★";
+                    break;
+                case 3:
+                    note = "★★★";
+                    break;
+                case 4:
+                    note = "★★★★";
+                    break;
+                case 5:
+                    note = "★★★★★";
+                    break;
+                default:
+                    break;
+            }
+            <p>Note : @note</p>
+            <a href="~/Serie/NoterSerie/@serie.Id" class="btn btn-danger">Noter cette série</a>
+        </div>
             }
         }
     </div>

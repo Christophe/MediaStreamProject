@@ -1,0 +1,96 @@
+﻿
+@{
+    ViewBag.Title = "QuizzFilm";
+}
+
+<h2>QuizzFilm</h2>
+
+@if (ViewBag.Quizz)
+{
+    switch (ViewBag.ID)
+    {
+        case 0:
+            <text>
+                Le film du mois est Harry Potter
+                Are you ready to start the Quizz ?
+
+                @using (Html.BeginForm("Start", "QuizzFilm"))
+                {
+                    <input type="submit" value="Commencer le Quizz" />
+                }
+            </text>
+            break;
+        case 1:
+            <text>
+                <h3">Premiere Question</h3">
+
+                @using (Html.BeginForm("Question1", "QuizzFilm"))
+                {
+                    @Html.Label("Pourquoi Hagrid a-t-il été renvoyé ? ");
+                    <br />
+                    <label>@Html.RadioButton("answer1", "Il a été accusé d'avoir ouvert la Chambre des Secrets")Il a été accusé d'avoir ouvert la Chambre des Secrets</label>
+                    <br />
+                    <label>@Html.RadioButton("answer1", "Il a tué le frère de McGonagall")Il a tué le frère de McGonagall</label>
+                    <br />
+                    <label>@Html.RadioButton("answer1", "Il a cassé sa baguette")Il a cassé sa baguette</label>
+                    <br />
+                    <input type="submit" value="Valider" />
+                }
+            </text>
+            break;
+        case 2:
+            <text>
+                <h3">Seconde Question</h3">
+                @using (Html.BeginForm("Question2", "QuizzFilm"))
+                {
+                    @Html.Label("Comment la chatte de Rusard s'appelle-t-elle ? ");
+                    <br />
+                    <label>@Html.RadioButton("answer2", "Miss Teigne")Miss Teigne</label>
+                    <br />
+                    <label>@Html.RadioButton("answer2", "Miss Peigne")Miss Peigne</label>
+                    <br />
+                    <label>@Html.RadioButton("answer2", "Miss Reigne")Miss Reigne</label>
+                    <br />
+                    <input type="submit" value="Valider" />
+                }
+            </text>
+            break;
+        case 3:
+            <text>
+                <h3">Troisieme Question</h3">
+                @using (Html.BeginForm("Question3", "QuizzFilm"))
+                {
+                    @Html.Label("Qui sont Lunard, Patmol, Queudver et Cornedrue (dans l'ordre) ? ");
+                    <br />
+                    <label>@Html.RadioButton("answer3", "Remus, Peter, James et Sirius")Remus, Peter, James et Sirius</label>
+                    <br />
+                    <label>@Html.RadioButton("answer3", "James, Sirius, Peter et Remus")James, Sirius, Peter et Remus</label>
+                    <br />
+                    <label>@Html.RadioButton("answer3", "Remus, Sirius, Peter et James")Remus, Sirius, Peter et James</label>
+                    <br />
+                    <input type="submit" value="Valider" />
+                }
+            </text>
+            break;
+        case 4:
+            <text>
+                <h3">Resultats</h3">
+                @ViewBag.score / 3
+                Vous avez mis @ViewBag.time secondes pour faire ce quizz.
+            </text>
+            break;
+        default:
+            break;
+    }
+}
+else
+{
+    <text>
+        <h3">Resultats</h3">
+        <p>Quizz deja fait !</p>
+        @Html.ActionLink("Resultats", "Results", "QuizzFilm")
+    </text>
+}
+
+
+

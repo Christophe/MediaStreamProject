@@ -7,6 +7,15 @@ namespace MediaStreamProject.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.0")]
+<<<<<<< HEAD:MediaStreamProject/Migrations/202002041334271_test.Designer.cs
+    public sealed partial class test : IMigrationMetadata
+    {
+        private readonly ResourceManager Resources = new ResourceManager(typeof(test));
+        
+        string IMigrationMetadata.Id
+        {
+            get { return "202002041334271_test"; }
+=======
     public sealed partial class test1 : IMigrationMetadata
     {
         private readonly ResourceManager Resources = new ResourceManager(typeof(test1));
@@ -14,6 +23,7 @@ namespace MediaStreamProject.Migrations
         string IMigrationMetadata.Id
         {
             get { return "202002041305204_test1"; }
+>>>>>>> 6d15316deeda7f404aa1c3e8ddf25daf3c4a30b1:MediaStreamProject/Migrations/202002041305204_test1.Designer.cs
         }
         
         string IMigrationMetadata.Source

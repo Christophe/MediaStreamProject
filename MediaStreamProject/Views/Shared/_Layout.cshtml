@@ -34,7 +34,9 @@
                     <li>@Html.ActionLink("Accueil", "Index", "Home", null, new { @class = "nav-link" })</li>
                     <li>@Html.ActionLink("Films", "Films", "Film", null, new { @class = "nav-link" })</li>
                     <li>@Html.ActionLink("Séries", "Series", "Serie", null, new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("Quizz", "Index", "Quizz", null, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Quizz", "Quizz", "Home", null, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("A regarder plus tard", "AfficherWishList", "WishList", null, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Videos deja vus", "AfficherHistorique", "Historique", null, new { @class = "nav-link" })</li>
                 </ul>
 
                 @using (Html.BeginForm("Research", "Home"))
