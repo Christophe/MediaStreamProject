@@ -10,8 +10,9 @@ namespace MediaStreamProject.Models
 
         public int UserId { get; set; }
 
+        public int filmId { get; set; }
 
-        public virtual List<Film> Films { get; set; }
+        
 
     }
 }

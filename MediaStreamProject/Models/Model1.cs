@@ -21,6 +21,7 @@
         public virtual DbSet<SerieWishList> SerieWishLists { get; set; }
         public virtual DbSet<FilmHistorique> FilmHistoriques { get; set; }
         public virtual DbSet<SerieHistorique> SerieHistoriques { get; set; }
+        
 
     }
 }

@@ -7,10 +7,13 @@ namespace MediaStreamProject.Models
     public class FilmWishList
 
     {
-        public FilmWishList(int userId, List<Film> films)
+
+        public FilmWishList() { }
+
+        public FilmWishList(int userId, int filmId)
         {
             UserId = userId;
-            Films = films;
+            FilmId = filmId;
         }
 
         [Key]
@@ -19,7 +22,7 @@ namespace MediaStreamProject.Models
         public int UserId { get; set; }
         
         
-        public virtual List<Film> Films { get; set; }
+        public virtual int FilmId { get; set; }
 
     }
 }
